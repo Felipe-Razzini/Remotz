@@ -1,0 +1,40 @@
+
+.sidebar {
+  width: 200px;
+  height: 90vh;
+  background-color: #f7f7ee;
+  border-radius: 10px;
+  margin: 30px 10px 30px 30px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding-bottom: 30px;
+
+      a {
+        text-decoration: none;
+
+        a:hover {
+          background-color: #e0d6eb;
+          border-radius: 20px;
+        }
+
+        i {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.avatar-div {
+  margin-bottom: 40px;
+}
