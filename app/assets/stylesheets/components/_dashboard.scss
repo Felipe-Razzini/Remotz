@@ -4,7 +4,6 @@
   grid-template-columns: repeat(3, 1fr);
 
   padding-block: 2rem;
-  color: white;
   width: 50%;
   margin-inline: auto;
 }
@@ -25,4 +24,11 @@
 .four {
   grid-column-start: 3;
   grid-row-start: 2;
+}
+
+.dashboard-item {
+  padding: 2rem;
+  background-color: #FBFBF9;
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px 1px rgba(250, 250, 250, 0.8);
 }
