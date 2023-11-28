@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "up" => "rails/health#show", as: :rails_health_check
-  get "pages/dashboard", to: "pages#dashboard", as: :dashboard
+  get "dashboard", to: "pages#dashboard"
 
   resources :projects
   resources :tasks
