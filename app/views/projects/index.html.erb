@@ -1,17 +1,22 @@
 <div class="container">
+  <div>
     <%= link_to "Add",  new_project_path(@project), class: "btn btn-primary rounded"%>
-  <ul>
-    <% @projects.each do | proj | %>
-      <div class="row">
-        <div class=" col align-self-start">
-          <li><%= link_to proj.name, project_path(proj.id)%></li>
+    <ul>
+      <% @projects.each do | proj | %>
+        <div class="row">
+          <div class=" col align-self-start">
+            <li><%= link_to proj.name, project_path(proj.id)%></li>
+          </div>
+          <div class=" col align-self-center">
+            <%= link_to project_path(proj),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{proj.name} project?"} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %></div>
         </div>
-        <div class=" col align-self-center">
-          <%= link_to project_path(proj),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{proj.name} project?"} do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %></div>
-      </div>
-    <%end %>
-  </ul>
+      <%end %>
+    </ul>
+  </div>
+  <div class="container">
+    <%= render "project_card" %>
+  </div>
 </div>
