@@ -1,0 +1,13 @@
+<div class="container">
+  <%= link_to "update", edit_project_path(@project), class: "btn btn-primary rounded"%>
+  <h2><%= @project.name %></h2>
+  <h2><%= @project.start_date %></h2>
+  <h2><%= @project.end_date %></h2>
+  <% if %>
+  <% @project.completed == false %>
+  <h2><%= "in progress" %></h2>
+  <% else %>
+
+  <h2><%= "Done" %></h2>
+  <% end %>
+</div>
