@@ -1,0 +1,28 @@
+.dashboard-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  padding-block: 2rem;
+  color: white;
+  width: 50%;
+  margin-inline: auto;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.three {
+  grid-row-start: 1;
+  grid-column-start: 3;
+}
+
+.four {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
