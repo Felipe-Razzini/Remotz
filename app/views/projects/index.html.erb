@@ -1,15 +1,8 @@
 <div class="container">
   <div>
-
     <h2>All Projects </h2>
     <%= link_to "Add",  new_project_path(@project), class: "btn btn-primary rounded"%>
   </div>
-  <ul>
-    <% @projects.each do | proj | %>
-      <div class="row">
-        <div class=" col align-self-start">
-          <li><%= link_to proj.name, project_path(proj.id)%></li>
-    <%= link_to "Add",  new_project_path(@project), class: "btn btn-primary rounded"%>
     <ul>
       <% @projects.each do | proj | %>
         <div class="row">

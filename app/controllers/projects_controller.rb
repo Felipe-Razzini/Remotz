@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.completed = false
     @project.user = current_user
     if @project.save
       redirect_to projects_path
@@ -49,6 +50,7 @@ class ProjectsController < ApplicationController
   def set_project
     @project = Project.find(params[:id])
   end
+  
   def project_params
     params.required(:project).permit(:name, :start_date, :end_date, :completed)
   end
