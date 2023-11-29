@@ -1,0 +1,49 @@
+.dashboard-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  padding-block: 2rem;
+  width: 75%;
+}
+
+@media (min-width: 40em) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .three {
+    grid-row-start: 1;
+    grid-column-start: 3;
+  }
+
+  .four {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.three {
+  grid-row-start: 1;
+  grid-column-start: 3;
+}
+
+.four {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.dashboard-item {
+  padding: 2rem;
+  background-color: #FBFBF9;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
