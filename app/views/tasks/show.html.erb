@@ -1,0 +1,13 @@
+<div class="container">
+  <%= link_to "update", edit_task_path(@task), class: "btn btn-primary rounded"%>
+  <h2><%= @task.title %></h2>
+  <h2><%= @task.start%></h2>
+  <h2><%= @task.priority%></h2>
+  <h2><%= @task.end%></h2>
+  <% if %>
+  <% @task.completed == false %>
+  <h2><%= "in progress" %></h2>
+  <% else %>
+  <h2><%= "Done" %></h2>
+  <% end %>
+</div>

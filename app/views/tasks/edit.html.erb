@@ -1,0 +1,22 @@
+<div class="new-form">
+  <div class="container ">
+    <div class="row pt-5">
+      <div class="col-6">
+        <h2>New Task</h2>
+      </div>
+      <div class="col-6">
+        <%= simple_form_for @task do |f| %>
+          <%= f.input :title%>
+          <%= f.input :priority , :collection => %w[High Medium Low] %>
+          <%= f.input :start%>
+          <%= f.input :end%>
+          <div class="row center-btn">
+            <%= f.submit "Update", class: "btn btn-primary new-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

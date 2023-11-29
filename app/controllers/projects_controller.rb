@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: %i[show edit update destroy]
 
   def index
     @projects = Project.all
@@ -6,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+
   end
 
   def new
@@ -19,25 +20,25 @@ class ProjectsController < ApplicationController
     @project.user = current_user
     if @project.save
       redirect_to projects_path
-      # redirect_to_path(@project)
+
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @project = Project.find(params[:id])
+
   end
 
   def update
-    @project = Project.find(params[:id])
+
     @project.update(project_params)
 
     redirect_to project_path(@project)
   end
 
   def destroy
-    @project = Project.find(params[:id])
+
     @project.destroy
 
     redirect_to projects_path, status: :see_other
@@ -45,6 +46,9 @@ class ProjectsController < ApplicationController
 
   private
 
+  def set_project
+    @project = Project.find(params[:id])
+  end
   def project_params
     params.required(:project).permit(:name, :start_date, :end_date, :completed)
   end
