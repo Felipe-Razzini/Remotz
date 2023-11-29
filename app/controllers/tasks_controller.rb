@@ -22,9 +22,8 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.completed = false
     @task.user = current_user
-  
+
     if @task.save
       redirect_to tasks_path
     else
@@ -57,7 +56,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.required(:task).permit(:title, :priority, :start, :end, :completed)
+    params.required(:task).permit(:title, :priority, :start, :end, :status)
   end
 
 end

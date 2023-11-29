@@ -14,7 +14,7 @@
       <div class="dashboard-card-infos">
         <p><%= project.name %></p>
         <p><%= project.end_date.strftime('%d %b %Y') %></p>
-        <p><%= project.completed %></p>
+        <p><%= project.status %></p>
       </div>
       <% end %>
     </div>
@@ -31,7 +31,7 @@
       <div class="dashboard-card-infos">
         <p><%= task.title %></p>
         <p><%= task.priority %></p>
-        <p><%= task.completed %></p>
+        <p><%= task.status %></p>
       </div>
       <% end %>
     </div>

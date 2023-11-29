@@ -3,11 +3,6 @@
   <h2><%= @project.name %></h2>
   <h2><%= @project.start_date %></h2>
   <h2><%= @project.end_date %></h2>
-  <% if %>
-  <% @project.completed == false %>
-  <h2><%= "in progress" %></h2>
-  <% else %>
+  <h2><%= @project.status %></h2>
 
-  <h2><%= "Done" %></h2>
-  <% end %>
 </div>

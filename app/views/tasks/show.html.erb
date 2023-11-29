@@ -5,10 +5,5 @@
   <h2><%= @task.start%></h2>
   <h2><%= @task.priority%></h2>
   <h2><%= @task.end%></h2>
-  <% if %>
-  <% @task.completed == false %>
-  <h2><%= "in progress" %></h2>
-  <% else %>
-  <h2><%= "Done" %></h2>
-  <% end %>
+  <h2><%= @task.status %></h2>
 </div>
