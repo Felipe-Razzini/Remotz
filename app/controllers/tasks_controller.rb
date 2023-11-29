@@ -5,6 +5,10 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
 
+    start_date = params.fetch(:start_date, Date.today).to_date
+
+    @tasks_cal = Task.where(start: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+
   end
 
   def show
@@ -20,9 +24,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.completed = false
     @task.user = current_user
+  
     if @task.save
       redirect_to tasks_path
-
     else
       render :new, status: :unprocessable_entity
     end
@@ -51,6 +55,7 @@ class TasksController < ApplicationController
   def set_task
     @task = Task.find(params[:id])
   end
+
   def task_params
     params.required(:task).permit(:title, :priority, :start, :end, :completed)
   end

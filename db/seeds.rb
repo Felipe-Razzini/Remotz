@@ -13,14 +13,14 @@ Project.destroy_all
 Task.destroy_all
 User.destroy_all
 
-user1 = User.create!(email: 'test@test3.com', password: '123123')
+user1 = User.create!(email: 'christine.onsi@gmail.com', password: 'chris123')
 user2 = User.create!(email: 'test@test2.com', password: '123ed23')
 user3 = User.create!(email: 'test@test1.com', password: '12ss23')
 felipe = User.create!(email: 'feliperazzini@hotmail.com', password: 'felipe')
 
-project_1 = { name: "Task management application", description: "Build task managment application", start_date: "13-10-2023", end_date: "30-10-2023", completed: false, user_id: user1.id }
-project_2 = { name: "Resturant website", description: "Build resturant website", start_date: "1-11-2023", end_date: "25-11-2023", completed: false, user_id: user2.id }
-project_3 = { name: "E-commerce website", description: "Build E-commerce website", start_date: "1-12-2023", end_date: "30-12-2023", completed: false, user_id: user3.id }
+project_1 = { name: "Task management application", description: "Build task managment application", start_date: "13-1-2024", end_date: "30-1-2024", completed: false, user_id: user1.id }
+project_2 = { name: "Resturant website", description: "Build resturant website", start_date: "12-1-2024", end_date: "25-1-2024", completed: false, user_id: user2.id }
+project_3 = { name: "E-commerce website", description: "Build E-commerce website", start_date: "14-2-2024", end_date: "30-1-2024", completed: false, user_id: user3.id }
 
 
 [project_1, project_2, project_3].each do |proj|
