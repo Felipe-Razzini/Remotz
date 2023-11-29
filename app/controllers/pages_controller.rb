@@ -6,5 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @projects = Project.all
+    @tasks_today = Task.where('DATE(start) = ?', Date.today)
   end
 end

@@ -42,8 +42,36 @@
 }
 
 .dashboard-item {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #FBFBF9;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card-infos {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.dashboard-card-headers {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 900;
+  color: $purple;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 7px;
+
+  p {
+    margin-bottom: 0;
+    padding-bottom: 4px;
+  }
+}
+
+.dashboard-card-title {
+  color: $purple;
 }
