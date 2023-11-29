@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-
   end
 
   def show
@@ -17,6 +16,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.completed = false
     @project.user = current_user
     if @project.save
       redirect_to projects_path
