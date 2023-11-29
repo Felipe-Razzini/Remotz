@@ -1,14 +1,18 @@
 <div class="d-flex" style="gap: 1.5rem">
   <%= render "shared/sidebar" %>
   <div class="dashboard-grid">
+
     <div class="one dashboard-item grid-col-span-2">
-      <div>
-        <p class="dashboard-card-title"><strong>Project summary</strong></p>
-      </div>
-      <div class="dashboard-card-headers">
-        <p><strong>Name</strong></p>
-        <p><strong>Due date</strong></p>
-        <p><strong>Status</strong></p>
+
+      <div class="dashboard-card-top position-sticky fixed-top">
+        <div>
+          <p class="dashboard-card-title"><strong>Project summary</strong></p>
+        </div>
+        <div class="dashboard-card-headers">
+          <p><strong>Name</strong></p>
+          <p><strong>Due date</strong></p>
+          <p><strong>Status</strong></p>
+        </div>
       </div>
       <% @projects.each do |project| %>
       <div class="dashboard-card-infos">
@@ -18,14 +22,18 @@
       </div>
       <% end %>
     </div>
+
     <div class="two dashboard-item grid-col-span-2">
-       <div>
-        <p class="dashboard-card-title"><strong>Today tasks</strong></p>
-      </div>
-      <div class="dashboard-card-headers">
-        <p><strong>Task</strong></p>
-        <p><strong>Priority</strong></p>
-        <p><strong>Status</strong></p>
+
+      <div class="dashboard-card-top position-sticky fixed-top">
+        <div>
+          <p class="dashboard-card-title"><strong>Today tasks</strong></p>
+        </div>
+        <div class="dashboard-card-headers">
+          <p><strong>Task</strong></p>
+          <p><strong>Priority</strong></p>
+          <p><strong>Status</strong></p>
+        </div>
       </div>
       <% @tasks_today.each do |task| %>
       <div class="dashboard-card-infos">
@@ -35,14 +43,19 @@
       </div>
       <% end %>
     </div>
+
     <div class="three dashboard-item">
-      <p>Overall progress</p>
+      <p class="dashboard-card-title"><strong>Overall progress</strong></p>
+      <div>
+        <%= pie_chart @projects_status_count, donut: true, width: "230px", height: "230px" %>
+      </div>
     </div>
+
     <div class="four dashboard-item">
-      <p>Projects workload</p>
+      <p class="dashboard-card-title"><strong>Projects workload</strong></p>
     </div>
     <div class="five dashboard-item grid-col-span-3">
-      <p><strong>Spotify</strong></p>
+      <p class="dashboard-card-title"><strong>Spotify</strong></p>
       <p>Music</p>
       <p>Music</p>
       <p>Music</p>
