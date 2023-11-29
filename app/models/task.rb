@@ -1,7 +1,8 @@
 class Task < ApplicationRecord
-  belongs_to :project
+  belongs_to :project, optional: true
   belongs_to :user
 
-  validates :title, :description, :priority, :completed, presence: true
+  validates :title, :priority, :start, :end, presence: true
+  validates :completed, inclusion: {in: [true, false]}
   validates :title, uniqueness: true
 end

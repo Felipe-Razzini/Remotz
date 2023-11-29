@@ -1,5 +1,8 @@
 <div class="container">
+  <div>
+    <h2>All Projects </h2>
     <%= link_to "Add",  new_project_path(@project), class: "btn btn-primary rounded"%>
+  </div>
   <ul>
     <% @projects.each do | proj | %>
       <div class="row">
