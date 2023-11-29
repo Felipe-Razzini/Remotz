@@ -18,3 +18,15 @@
     <%end %>
   </ul>
 </div>
+<div class="container">
+<%= month_calendar(events: @tasks_cal, end_attribute: :end) do |date, tasks| %>
+  <%= date %>
+  <% tasks.each do |task| %>
+    <div class="meeting <%=  task.priority%>">
+      <p><%= task.title %></p>
+     <small><%= task.time %></small>
+
+    </div>
+  <% end %>
+<% end %>
+</div>
