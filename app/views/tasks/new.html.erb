@@ -8,6 +8,7 @@
         <%= simple_form_for @task do |f| %>
           <%= f.input :title%>
           <%= f.input :priority , :collection => %w[High Medium Low] %>
+          <%# <%= f.input :status , :collection => %w[started In Progress Delayed]%>
           <%= f.input :start%>
           <%= f.input :end%>
           <div class="row center-btn">
