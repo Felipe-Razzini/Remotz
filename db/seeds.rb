@@ -12,6 +12,7 @@ puts 'Cleaning database...'
 Project.destroy_all
 Task.destroy_all
 User.destroy_all
+Alert.destroy_all
 
 christine = User.create!(email: 'christine.onsi@gmail.com', password: 'chris123', username: 'Christine')
 tom = User.create!(email: 'test@test1.com', password: '12ss23', username: 'Tom')
@@ -36,15 +37,22 @@ projects.each do |attribute|
 end
 puts "Finished projects seeding!"
 
+tasks = [
+  task_1 = { title: "Design figma", priority: "Low", status: "Delayed", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
+  task_2 = { title: "Build frontend code", priority: "Medium", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:christine.id},
+  task_3 = { title: "Build Backend code", priority: "High", status: "Completed", start:"13-10-2023", end:"13-10-2023",user_id:tom.id},
+  task_4 = { title: "check functionality", priority: "High", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
+  task_5 = { title: "Meeting with Product Team", priority: "High", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:christine.id},
+  task_6 = { title: "Daily Sprint", priority: "Medium", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:christine.id},
+  task_7 = { title: "Meeting with Francesca", priority: "Low", status: "Delayed", start:"#{Date.tomorrow}", end:"#{Date.tomorrow}",user_id:felipe.id},
+  task_8 = { title: "Standup meeting", priority: "Medium", status: "In progress", start:"#{Date.tomorrow}", end:"#{Date.tomorrow}",user_id:christine.id},
+  task_9 = { title: "Ruby Sprint", priority: "High", status: "Completed", start:"13-10-2023", end:"13-10-2023",user_id:tom.id},
+  task_10 = { title: "Create sidebar", priority: "High", status: "In progress", start:"#{Date.tomorrow}", end:"#{Date.tomorrow}",user_id:felipe.id},
+  task_11 = { title: "Finish Javascript logic", priority: "High", status: "In progress", start:"#{Date.tomorrow}", end:"#{Date.tomorrow}",user_id:christine.id},
+  task_12 = { title: "Review Jeff's code", priority: "Medium", status: "In progress", start:"#{Date.tomorrow}", end:"#{Date.tomorrow}",user_id:christine.id}
+]
 
-task_1 = { title: "Design figma", priority: "Low", status: "Delayed", start:"13-10-2023", end:"13-10-2023",user_id:felipe.id}
-task_2 = { title: "Build frontend code", priority: "Medium", status: "In progress", start:"1-11-2023", end:"1-11-2023",user_id:christine.id}
-task_3 = { title: "Build Backend code", priority: "High", status: "Completed", start:"13-10-2023", end:"13-10-2023",user_id:tom.id}
-task_4 = { title: "check functionality", priority: "High", status: "In progress", start:"1-12-2023", end:"1-12-2023",user_id:felipe.id}
-task_5 = { title: "Meeting with Product Team", priority: "High", status: "In progress", start:"3-12-2023", end:"3-12-2023",user_id:christine.id}
-task_6 = { title: "Daily Sprint", priority: "Medium", status: "In progress", start:"4-12-2023", end:"4-12-2023",user_id:christine.id}
-
-[task_1, task_2, task_3, task_4, task_5, task_6].each do |attribute|
+tasks.each do |attribute|
   task= Task.create!(attribute)
   puts "create #{task.title}"
 end
