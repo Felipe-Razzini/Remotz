@@ -1,5 +1,4 @@
-
-<div class="container mt-5">
+<div class="tasks-container">
   <%= month_calendar(events: @tasks_cal, end_attribute: :end) do |date, tasks| %>
     <div class="day-date">
       <%= date %>
@@ -11,11 +10,11 @@
       </div>
     <% end %>
   <% end %>
-</div>
-<%# width = "0%"
+  <%# width = "0%"
   if task.status == "On going"
   width = "50%"
   elseif task.status == "pending"
   width = "20%"
   else
   width = "100%" %>
+</div>
