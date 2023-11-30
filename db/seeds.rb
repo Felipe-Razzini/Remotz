@@ -29,7 +29,7 @@ project_3 = { name: "E-commerce website", description: "Build E-commerce website
 end
 puts "Finished projects seeding!"
 
-task_1 = { title: "Design figma", priority: "Low", status: "Pending", start:"13-10-2023", end:"30-10-2023",user_id:user2.id}
+task_1 = { title: "Design figma", priority: "Low", status: "Pending", start:"13-10-2023", end:"13-10-2023",user_id:user2.id}
 task_2 = { title: "Build frontend code", priority: "Medium", status: "On going", start:"1-11-2023", end:"25-11-2023",user_id:user3.id}
 task_3 = { title: "Build Backend code", priority: "High", status: "Completed", start:"13-10-2023", end:"30-10-2023",user_id:user3.id}
 task_4 = { title: "check functionality", priority: "High", status: "On going", start:"1-12-2023", end:"30-12-2023",user_id:user1.id}
