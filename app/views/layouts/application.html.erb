@@ -13,9 +13,15 @@
 
   <body>
 
-    <%# <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <div class="d-flex" style="gap: 1.5rem">
+      <div>
+        <%= render "shared/sidebar" %>
+      </div>
+      <div class="w-75 <%= "yield-container" unless params[:action] == "dashboard" %>">
+        <%= yield %>
+      </div>
+    </div>
 
-    <%= yield %>
+    <%= render "shared/flashes" %>
   </body>
 </html>
