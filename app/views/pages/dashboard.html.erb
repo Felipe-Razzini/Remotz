@@ -25,23 +25,12 @@
 
     <div class="two dashboard-item grid-col-span-2">
 
-      <div class="dashboard-card-top position-sticky fixed-top">
-        <div>
-          <p class="dashboard-card-title"><strong>Today tasks</strong></p>
-        </div>
-        <div class="dashboard-card-headers">
-          <p><strong>Task</strong></p>
-          <p><strong>Priority</strong></p>
-          <p><strong>Status</strong></p>
-        </div>
+      <div class="tasks-dashboard-card-title position-sticky fixed-top">
+        <p><strong>Today tasks</strong></p>
       </div>
-      <% @tasks_today.each do |task| %>
-      <div class="dashboard-card-infos">
-        <p><%= task.title %></p>
-        <p><%= task.priority %></p>
-        <p><%= task.status %></p>
-      </div>
-      <% end %>
+
+      <%= render "tasks/tasks_today" %>
+
     </div>
 
     <div class="three dashboard-item">
