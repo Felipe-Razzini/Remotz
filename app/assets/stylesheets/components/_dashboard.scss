@@ -1,3 +1,4 @@
+
 .dashboard-grid {
   display: grid;
   gap: 1.5rem;
@@ -25,6 +26,18 @@
 
 .grid-col-span-2 {
   grid-column: span 2;
+  overflow-y: auto;
+  height: 300px;
+}
+
+// .grid-col-span-2::-webkit-scrollbar {
+//   width: 8px;
+// }
+
+.dashboard-card-top {
+  z-index: 2;
+  background-color: $beige;
+  padding-top: 10px;
 }
 
 .grid-col-span-3 {
@@ -34,18 +47,33 @@
 .three {
   grid-row-start: 1;
   grid-column-start: 3;
+  height: 300px;
+
+  .dashboard-card-title {
+    padding-top: 10px;
+   }
 }
 
 .four {
   grid-column-start: 3;
   grid-row-start: 2;
+  height: 300px;
+
+  .dashboard-card-title {
+    padding-top: 10px;
+   }
 }
 
+.five .dashboard-card-title {
+  padding-top: 10px;
+}
+
+
 .dashboard-item {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: #FBFBF9;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 40px 1px rgb(230, 230, 250);
 }
 
 .dashboard-card-infos {
@@ -54,6 +82,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-weight: 600;
+  z-index: 1;
 }
 
 .dashboard-card-headers {
