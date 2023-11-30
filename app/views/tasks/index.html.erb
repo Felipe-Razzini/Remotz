@@ -11,6 +11,7 @@
         <th scope = 'col'>Progress</th>
         <th scope="col">Starts - Ends</th>
         <th scope="col">Status</th>
+        <th scope="col">Priority</th>
       </tr>
     </thead>
     <tbody>
@@ -18,11 +19,23 @@
         <tr>
           <th scope="row"><%= index + 1%></th>
           <td><%= link_to task.title, task_path(task.id)%></td>
-          <td> <div class="progress">
-
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-          </div></td>
+          <td>
+            <div class="progress">
+              <% if task.status == "In progress"%>
+                <% width = "50%" %>
+                <% barColor = "bg-warning" %>
+              <% elsif task.status == "Delayed" %>
+                <% width = "20%" %>
+                <% barColor = "bg-danger" %>
+              <% else %>
+                <% width ="100%" %>
+                <% barColor = "bg-success" %>
+              <% end %>
+            <div class="progress-bar progress-bar-striped <%=barColor%> " role="progressbar" style="width: <%= width %>" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </td>
           <td class="text-center"><%= task.time %></td>
+          <td class="text-center"><span class="status  <%= task.status == "In progress" ? "progress-status":task.status %>"><%= task.status %></span></td>
           <td class="text-center"><%= task.priority %></td>
           <td ><%= link_to raw(' <i class="fa-solid fa-pen"></i>'), edit_task_path(task) %>
           </td>
@@ -47,9 +60,10 @@
     <% end %>
   <% end %>
 </div>
-
-
-
-width = "0%"
-
-if task.status == "On going"
+<%# width = "0%"
+  if task.status == "On going"
+  width = "50%"
+  elseif task.status == "pending"
+  width = "20%"
+  else
+  width = "100%" %>
