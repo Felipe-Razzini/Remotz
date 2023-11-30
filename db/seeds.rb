@@ -36,15 +36,27 @@ projects.each do |attribute|
 end
 puts "Finished projects seeding!"
 
-task_1 = { title: "Design figma", priority: "Low", status: "Delayed", start:"13-10-2023", end:"30-10-2023",user_id:felipe.id}
-task_2 = { title: "Build frontend code", priority: "Medium", status: "In progress", start:"1-11-2023", end:"25-11-2023",user_id:christine.id}
-task_3 = { title: "Build Backend code", priority: "High", status: "Completed", start:"13-10-2023", end:"30-10-2023",user_id:tom.id}
-task_4 = { title: "check functionality", priority: "High", status: "In progress", start:"1-12-2023", end:"30-12-2023",user_id:felipe.id}
-task_5 = { title: "Meeting with Product Team", priority: "High", status: "In progress", start:"29-11-2023", end:"30-11-2023",user_id:christine.id}
-task_6 = { title: "Daily Sprint", priority: "Medium", status: "In progress", start:"29-11-2023", end:"30-11-2023",user_id:christine.id}
+task_1 = { title: "Design figma", priority: "Low", status: "Delayed", start:"13-10-2023", end:"13-10-2023",user_id:felipe.id}
+task_2 = { title: "Build frontend code", priority: "Medium", status: "In progress", start:"1-11-2023", end:"1-11-2023",user_id:christine.id}
+task_3 = { title: "Build Backend code", priority: "High", status: "Completed", start:"13-10-2023", end:"13-10-2023",user_id:tom.id}
+task_4 = { title: "check functionality", priority: "High", status: "In progress", start:"1-12-2023", end:"1-12-2023",user_id:felipe.id}
+task_5 = { title: "Meeting with Product Team", priority: "High", status: "In progress", start:"3-12-2023", end:"3-12-2023",user_id:christine.id}
+task_6 = { title: "Daily Sprint", priority: "Medium", status: "In progress", start:"4-12-2023", end:"4-12-2023",user_id:christine.id}
 
 [task_1, task_2, task_3, task_4, task_5, task_6].each do |attribute|
   task= Task.create!(attribute)
   puts "create #{task.title}"
 end
+
+alert_1 = { title: "Drink Water", description: "Stay hydrated. Fill your water bottle.", user_id: felipe.id }
+alert_2 = { title: "Feed Bowser!", description: "He already asked you 7 times!", user_id: felipe.id }
+alert_3 = { title: "Time for a break!", description: "You have been working for 2 hours non-stop!", user_id: felipe.id }
+alert_4 = { title: "Maybe it's time to close your laptop", description: "It's 8pm already! Don't keep Netflix waiting!", user_id: felipe.id }
+
+[alert_1, alert_2, alert_3, alert_4].each do |attribute|
+  alert = Alert.create!(attribute)
+  puts "create #{alert.title}"
+end
+
+
 puts "Finished tasks seeding!"
