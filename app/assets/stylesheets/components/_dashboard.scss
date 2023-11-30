@@ -45,7 +45,7 @@
 }
 
 .three {
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-column-start: 3;
   height: 300px;
 
@@ -56,7 +56,7 @@
 
 .four {
   grid-column-start: 3;
-  grid-row-start: 2;
+  grid-row-start: 1;
   height: 300px;
 
   .dashboard-card-title {
