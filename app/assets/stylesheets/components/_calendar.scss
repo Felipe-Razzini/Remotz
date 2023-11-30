@@ -1,4 +1,8 @@
 .simple-calendar {
+
+  font-size: 12px;
+  padding-bottom: 20px;
+
   table {
     min-height: 50vh;
   }
@@ -6,18 +10,37 @@
     background-color: #faf3dd;
   }
 
+  .day-wrapper {
+    height: 100px;
+    // position: relative;
+  }
+
+  .day-date {
+    position: sticky;
+    top: 0;
+  }
+
   .day {
-    height: 60px;
+    width: calc(100% / 7);
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 }
 
 .meeting {
   color: black;
-  padding: 8px 24px;
+  padding: 4px;
   border-radius: 4px;
+  font-size: 10px;
+  width: 100%;
+  overflow: hidden;
   // background: #1edd88;
   margin-bottom: 4px;
   // transition: background 0.3s ease;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .High {

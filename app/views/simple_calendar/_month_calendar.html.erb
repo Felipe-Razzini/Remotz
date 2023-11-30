@@ -1,4 +1,5 @@
 <div class="simple-calendar">
+  <h2><i class="fa-solid fa-calendar-days"></i> Calendar</h2>
   <div class="d-flex align-items-center justify-content-between">
     <div class="calendar-heading my-2">
       <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
@@ -22,7 +23,9 @@
     <tr>
       <% dates.each do |date| %>
         <%= content_tag :td, class: calendar.td_classes_for(date) do %>
+        <div class="day-wrapper">
           <% passed_block.call date.day, sorted_events.fetch(date, []) %>
+          </div>
         <% end %>
       <% end %>
     </tr>
