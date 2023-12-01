@@ -14,23 +14,10 @@
 
     <div class="one dashboard-item grid-col-span-2">
 
-      <div class="dashboard-card-top position-sticky fixed-top">
-        <div>
-          <p class="dashboard-card-title"><strong>Project summary</strong></p>
-        </div>
-        <div class="dashboard-card-headers">
-          <p><strong>Name</strong></p>
-          <p><strong>Due date</strong></p>
-          <p><strong>Status</strong></p>
-        </div>
-      </div>
-      <% @projects.each do |project| %>
-      <div class="dashboard-card-infos">
-        <p><%= project.name %></p>
-        <p><%= project.end_date.strftime('%d %b %Y') %></p>
-        <p><%= project.status %></p>
-      </div>
-      <% end %>
+      <p class="dashboard-card-title pt-2"><strong>Project summary</strong></p>
+
+      <%= render "projects/project_dashboard" %>
+
     </div>
 
     <div class="three dashboard-item">

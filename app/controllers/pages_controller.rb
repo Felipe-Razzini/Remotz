@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @projects = Project.all
+    @projects = Project.includes(:user).all
+    puts @projects
     @tasks_today = Task.where('DATE(start) = ?', Date.today)
     @projects_status_count = Project.group(:status).count
     @projects_workload_count = Project.joins(:user).group(:username).count
