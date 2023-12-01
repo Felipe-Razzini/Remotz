@@ -106,11 +106,16 @@
 }
 
 .tasks-dashboard-card-title {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
   color: $purple;
   text-align: center;
   align-items: center;
+  background-color: $beige;
 
   a {
     text-decoration: none;
@@ -125,4 +130,15 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.projects-dashboard-card-title {
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: $purple;
+  text-align: center;
+  align-items: center;
+  background-color: $beige;
 }
