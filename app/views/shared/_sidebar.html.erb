@@ -6,7 +6,9 @@
     </div>
     <div class="avatar-info">
       <p><%= "Software Developer".upcase %></p>
-      <p><strong><%= current_user.username %></strong></p>
+      <% if user_signed_in? %>
+        <p><strong><%= current_user.username %></strong></p>
+      <% end %>
     </div>
   </div>
 
