@@ -2,18 +2,18 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-task"
 export default class extends Controller {
-  static targets = ["infos", "form"]
+  static targets = ["info", "form", "input"]
 
   connect() {
-    console.log(this.infosTargets);
+    console.log(this.infoTargets);
     console.log(this.formTargets);
   }
 
   displayForm(e) {
     e.preventDefault()
-    let form = this.formTargets.find( (form) => form.dataset.id === e.target.dataset.id )
+    // let form = this.formTargets.find( (form) => form.dataset.id === e.target.dataset.id )
 
-    this.infosTarget.classList.add("d-none")
-    form.style.display("inline-block")
+    this.infoTargets.forEach((info) => { info.classList.add("d-none") })
+    this.inputTargets.forEach((input) => { input.classList.remove("d-none") })
   }
 }
