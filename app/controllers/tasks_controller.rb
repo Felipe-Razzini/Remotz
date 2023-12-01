@@ -39,7 +39,7 @@ class TasksController < ApplicationController
 
     @task.update(task_params)
 
-    redirect_to task_path(@task)
+    redirect_to dashboard_path
   end
 
   def destroy

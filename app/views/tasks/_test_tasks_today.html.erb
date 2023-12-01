@@ -1,0 +1,35 @@
+<div class="container px-0">
+    <table class="table table-striped ">
+    <thead class="tasks-table text-center position-sticky fixed-top">
+      <tr>
+        <th scope="col">#</th>
+        <th style="text-align: start;" scope="col">Title</th>
+        <th scope="col">Status</th>
+        <th scope="col">Priority</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody data-controller="edit">
+      <% @tasks_today.each_with_index do | task ,index| %>
+        <%# <tr class="tasks-rows"> %>
+          <tr class="task-infos" data-id="<%= task.id %>" data-edit-target="infos">
+            <th scope="row"><%= index + 1%></th>
+            <td><%= link_to task.title, task_path(task.id), class: "text-decoration-none"%></td>
+            <td class="text-center"><span class="status  <%= task.status == "In progress" ? "progress-status":task.status %>"><%= task.status %></span></td>
+            <td class="text-center"><%= task.priority %></td>
+            <td>
+              <%= link_to raw(' <i class="fa-solid fa-pen"></i>'), edit_task_path(task), data: { action: 'click->edit#displayForm' } %>
+            </td>
+            <td>
+              <%= link_to dashboard_path(task),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{task.title} task?"} do %>
+                <i class="fa-solid fa-xmark"></i>
+              <% end %>
+            </td>
+          </tr>
+        <%# </tr> %>
+        <% end %>
+    </tbody>
+  </table>
+</div>

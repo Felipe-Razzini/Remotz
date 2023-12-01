@@ -1,0 +1,17 @@
+.task-grid {
+  font-size: 12px;
+  text-align: center;
+  display: grid;
+  margin: 10px;
+  align-items: center;
+  grid-template-columns: 0.5fr 3fr 1.5fr 1.5fr 0.5fr 0.5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . .";
+
+  p, div {
+    margin: 0!important;
+  }
+}
