@@ -14,10 +14,14 @@
   <body>
 
     <div class="d-flex" style="gap: 1.5rem">
-      <div>
-        <%= render "shared/sidebar" %>
-      </div>
-      <div class="w-75 <%= "yield-container" unless params[:action] == "dashboard" %>">
+
+      <% unless current_page?(root_path) %>
+        <div>
+          <%= render "shared/sidebar" %>
+        </div>
+      <% end %>
+
+      <div class="w-75 <%= "yield-container" unless params[:action] == "dashboard" && "home" %>">
         <%= yield %>
       </div>
     </div>

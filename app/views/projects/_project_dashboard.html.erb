@@ -1,16 +1,14 @@
-<div class="task-grid">
+<div class="project-grid">
   <p class="text-start"><strong>Name</strong></p>
   <p><strong>Start</strong></p>
   <p><strong>Due date</strong></p>
   <p><strong>Project Leader</strong></p>
-  <p></p>
-  <p></p>
 
   <% @projects.each do | project| %>
-    <p class="text-start"><%= project.name%></p>
+    <p class="text-start text-primary"><strong><%= project.name%></strong></p>
     <p><%= project.start_date %></p>
     <p><%= project.end_date %></p>
-    <%= project.user_id %>
+    <%= project.user.username %>
   <% end %>
 
 </div>
