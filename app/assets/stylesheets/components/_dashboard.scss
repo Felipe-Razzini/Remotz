@@ -45,7 +45,7 @@
 }
 
 .three {
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-column-start: 3;
   height: 300px;
 
@@ -56,7 +56,7 @@
 
 .four {
   grid-column-start: 3;
-  grid-row-start: 2;
+  grid-row-start: 1;
   height: 300px;
 
   .dashboard-card-title {
@@ -103,4 +103,26 @@
 
 .dashboard-card-title {
   color: $purple;
+}
+
+.tasks-dashboard-card-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: $purple;
+  text-align: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+    background-color: $purple;
+    padding: 3px 15px;
+    border-radius: 10px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
 }

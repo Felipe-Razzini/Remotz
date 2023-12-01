@@ -2,6 +2,16 @@
   <%# <%= render "shared/sidebar" %>
   <div class="dashboard-grid">
 
+    <div class="two dashboard-item grid-col-span-2">
+
+      <div class="tasks-dashboard-card-title d-flex justify-content-between position-sticky fixed-top">
+        <p><strong>Today tasks</strong></p>
+        <%= link_to "Add", new_task_path(@task), class: "btn-add-task"%>
+      </div>
+
+      <%= render "tasks/tasks_today" %>
+    </div>
+
     <div class="one dashboard-item grid-col-span-2">
 
       <div class="dashboard-card-top position-sticky fixed-top">
@@ -23,36 +33,15 @@
       <% end %>
     </div>
 
-    <div class="two dashboard-item grid-col-span-2">
-
-      <div class="dashboard-card-top position-sticky fixed-top">
-        <div>
-          <p class="dashboard-card-title"><strong>Today tasks</strong></p>
-        </div>
-        <div class="dashboard-card-headers">
-          <p><strong>Task</strong></p>
-          <p><strong>Priority</strong></p>
-          <p><strong>Status</strong></p>
-        </div>
-      </div>
-      <% @tasks_today.each do |task| %>
-      <div class="dashboard-card-infos">
-        <p><%= task.title %></p>
-        <p><%= task.priority %></p>
-        <p><%= task.status %></p>
-      </div>
-      <% end %>
-    </div>
-
     <div class="three dashboard-item">
-      <p class="dashboard-card-title"><strong>Overall progress</strong></p>
+      <p class="dashboard-card-title"><strong>Overall projects progress</strong></p>
       <div>
         <%= pie_chart @projects_status_count, donut: true, width: "230px", height: "230px", colors: ["#14ae5ca7", "#4d4d9dc1", "#c4381cc4"] %>
       </div>
     </div>
 
     <div class="four dashboard-item">
-      <p class="dashboard-card-title"><strong>Projects workload</strong></p>
+      <p class="dashboard-card-title"><strong>Tasks workload</strong></p>
       <div>
         <%= bar_chart @projects_workload_count, width: "240px", height: "240px" %>
       </div>

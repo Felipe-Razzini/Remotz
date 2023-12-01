@@ -21,15 +21,18 @@
 
   li {
     padding-bottom: 30px;
+
+    // &:hover {
+    //   background: #e0d6eb;
+    // }
+
+    a {
+      text-decoration: none;
+      color: #757575;
+    }
   }
 }
 
-.sidebar ul li {
-  a {
-    text-decoration: none;
-    color: #757575;
-  }
-}
 
 .sidebar a:hover {
   background-color: #e0d6eb;
