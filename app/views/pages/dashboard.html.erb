@@ -1,4 +1,4 @@
-<div class="d-flex" style="gap: 1.5rem">
+<div class="d-flex">
   <%# <%= render "shared/sidebar" %>
   <div class="dashboard-grid">
 
@@ -26,15 +26,15 @@
         <%= pie_chart @projects_status_count, donut: true, legend: false, width: "200px", height: "150px", colors: ["#14ae5ca7", "#dfaf55c0", "#c4381cc4"] %>
         <div class="chart-labels">
           <div class="d-flex">
-            <i class="fa-solid fa-square" style="color: #14ae5ca7"></i>
+            <i class="fa-solid fa-square pe-2" style="color: #14ae5ca7"></i>
             <p>Completed</p>
           </div>
-          <div>
-            <i class="fa-solid fa-square" style="color: #dfaf55c0"></i>
+          <div class="d-flex">
+            <i class="fa-solid fa-square pe-2" style="color: #dfaf55c0"></i>
             <p>In progress</p>
           </div>
-          <div>
-            <i class="fa-solid fa-square" style="color: #c4381cc4"></i>
+          <div class="d-flex">
+            <i class="fa-solid fa-square pe-2" style="color: #c4381cc4"></i>
             <p>Delayed</p>
           </div>
         </div>
