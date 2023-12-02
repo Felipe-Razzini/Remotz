@@ -27,7 +27,7 @@
 .grid-col-span-2 {
   grid-column: span 2;
   overflow-y: auto;
-  height: 300px;
+  height: 200px;
 }
 
 // .grid-col-span-2::-webkit-scrollbar {
@@ -47,7 +47,7 @@
 .three {
   grid-row-start: 2;
   grid-column-start: 3;
-  height: 300px;
+  height: 200px;
 
   .dashboard-card-title {
     padding-top: 10px;
@@ -57,7 +57,7 @@
 .four {
   grid-column-start: 3;
   grid-row-start: 1;
-  height: 300px;
+  height: 200px;
 
   .dashboard-card-title {
     padding-top: 10px;
@@ -136,9 +136,16 @@
   position: sticky;
   top: 0;
   padding-top: 10px;
-  padding-bottom: 10px;
   color: $purple;
-  text-align: center;
-  align-items: center;
   background-color: $beige;
+}
+
+.donut-chart {
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-labels p {
+  font-size: 12px;
+  width: 50%;
 }
