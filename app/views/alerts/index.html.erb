@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h4 class="text-primary">
+      <strong>It's hard to plan everything ahead of us. Let Remotz help you with that!</strong>
+    </h4>
+
+    <button class="btn btn-primary">
+      <%= link_to "New Alert", new_alert_path, class: "text-white text-decoration-none" %>
+    </button>
+  </div>
+
+  <div class="mt-5">
+    <h5><strong>Your reminders:</strong></h5>
+    <div class="alerts-grid my-4">
+
+      <%= render "alert_card" %>
+
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h5>Our suggestions:</h5>
+    <div class="suggestion-list">
+
+      <%= render "suggestions/index" %>
+
+    </div>
+  </div>
+
+
+</div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 6,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
