@@ -1,8 +1,8 @@
 
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-    <% @suggestions.each do |suggestion| %>
-    <div class="swiper-slide alert-card">
+    <% @suggestions.each_with_index do |suggestion, i| %>
+    <div class="swiper-slide alert-card <%= i.odd? ? 'pink-title' : 'blue-title' %>">
       <h4><strong><%= suggestion.title %></strong></h4>
       <p><%= suggestion.description%></p>
     </div>
