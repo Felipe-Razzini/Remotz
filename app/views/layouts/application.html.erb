@@ -9,11 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
 
   <body>
 
-    <div class="d-flex" style="gap: 1.5rem">
+    <div class="d-flex">
 
       <% unless current_page?(root_path) %>
         <div>
@@ -21,7 +22,7 @@
         </div>
       <% end %>
 
-      <div class="w-75 <%= "yield-container" unless params[:action] == "dashboard" && "home" %>">
+      <div class="w-100 px-5 <%= "yield-container" unless params[:action] == "dashboard" && "home" %>">
         <%= yield %>
       </div>
     </div>

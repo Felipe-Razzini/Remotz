@@ -1,0 +1,32 @@
+
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+    <% @suggestions.each do |suggestion| %>
+    <div class="swiper-slide alert-card">
+      <h4><strong><%= suggestion.title %></strong></h4>
+      <p><%= suggestion.description%></p>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    // slidesPerView: 6,
+    slidesPerView: 6,
+    spaceBetween: 30,
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+    loop: true, // Optional: Enable looping
+    autoplay: {
+      delay: 3000, // Set the delay between slides in milliseconds (e.g., 3000 = 3 seconds)
+      disableOnInteraction: false, // Continue autoplay even after user interaction
+    },
+  });
+</script>

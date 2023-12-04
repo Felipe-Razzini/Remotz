@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :tasks
   resources :alerts, only: %i[index new create destroy]
+  resources :suggestions, only: %i[index show create]
 
 end
