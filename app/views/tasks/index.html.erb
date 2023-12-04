@@ -19,6 +19,10 @@
       </div>
       <% tasks.each do |task| %>
         <div class="meeting <%= task.priority %>">
+          <%= link_to task_path(task),
+            data: { edit_target: "info", turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{task.title} from your tasks?"} do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
           <p><strong><%= task.title %></strong></p>
           <small><%= task.time %></small>
         </div>
@@ -34,6 +38,10 @@
       </div>
       <% tasks.each do |task| %>
         <div class="meeting <%= task.priority %>">
+          <%= link_to task_path(task),
+            data: { edit_target: "info", turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{task.title} from your tasks?"} do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
           <p><strong><%= task.title %></strong></p>
           <small><%= task.time %></small>
         </div>
