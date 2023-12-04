@@ -1,12 +1,25 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
+
+
+
+  <%# <h3><i class="fa-solid fa-calendar-days"></i> Calendar</h3> %>
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="calendar-heading my-2">
+
+
+     <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view + '&type=week', class: 'btn btn-outline-primary' %>
+
+
+
     <% if calendar.number_of_weeks == 1 %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %></span>
+      <span class="calendar-title btn btn-primary"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %></span>
     <% else %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
+      <span class="calendar-title btn btn-primary"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
     <% end %>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+         <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view + '&type=week', class: 'btn btn-outline-primary' %>
+    </div>
+    <%= link_to 'Add new Task', new_task_path(@task), class: 'btn btn-info text-white' %>
   </div>
 
   <table class="table table-striped">

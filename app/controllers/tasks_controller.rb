@@ -53,8 +53,6 @@ class TasksController < ApplicationController
     redirect_to request.referrer, status: :see_other
   end
 
-
-
   private
 
   def set_task

@@ -1,14 +1,13 @@
 <div class="simple-calendar">
-  <h3><i class="fa-solid fa-calendar-days"></i> Calendar</h3>
+  <%# <h3><i class="fa-solid fa-calendar-days"></i> Calendar</h3> %>
   <div class="d-flex align-items-center justify-content-between">
     <div class="calendar-heading my-2">
-      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
+      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view + '&type=month', class: 'btn btn-outline-primary' %>
       <span class="calendar-title btn btn-primary"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
+      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view  + '&type=month', class: 'btn btn-outline-primary' %>
     </div>
     <%= link_to 'Add new Task', new_task_path(@task), class: 'btn btn-info text-white' %>
   </div>
-
   <table class="table table-striped">
     <thead>
       <tr>
@@ -17,19 +16,18 @@
         <% end %>
       </tr>
     </thead>
-
-<tbody>
-  <% date_range.each_slice(7) do |dates| %>
-    <tr>
-      <% dates.each do |date| %>
-        <%= content_tag :td, class: calendar.td_classes_for(date) do %>
-        <div class="day-wrapper">
-          <% passed_block.call date.day, sorted_events.fetch(date, []) %>
-          </div>
-        <% end %>
+    <tbody>
+      <% date_range.each_slice(7) do |dates| %>
+        <tr>
+          <% dates.each do |date| %>
+            <%= content_tag :td, class: calendar.td_classes_for(date) do %>
+              <div class="day-wrapper">
+                <% passed_block.call date.day, sorted_events.fetch(date, []) %>
+              </div>
+            <% end %>
+          <% end %>
+        </tr>
       <% end %>
-    </tr>
-  <% end %>
-</tbody>
+    </tbody>
   </table>
 </div>
