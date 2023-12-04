@@ -65,15 +65,39 @@ tasks.each do |attribute|
   puts "create #{task.title}"
 end
 
-alert_1 = { title: "Drink Water", description: "Stay hydrated. Fill your water bottle.", user_id: felipe.id }
-alert_2 = { title: "Feed Bowser!", description: "He already asked you 7 times!", user_id: felipe.id }
-alert_3 = { title: "Time for a break!", description: "You have been working for 2 hours non-stop!", user_id: felipe.id }
-alert_4 = { title: "Maybe it's time to close your laptop", description: "It's 8pm already! Don't keep Netflix waiting!", user_id: felipe.id }
+alerts = [
+  alert_1 = { title: "Drink Water", description: "Stay hydrated. Fill your water bottle.", user_id: felipe.id },
+  alert_2 = { title: "Feed Bowser!", description: "He already asked you 7 times!", user_id: felipe.id },
+  alert_3 = { title: "Time for a break!", description: "You have been working for 2 hours non-stop!", user_id: felipe.id },
+  alert_4 = { title: "Maybe it's time to close your laptop", description: "It's 8pm already! Don't keep Netflix waiting!", user_id: felipe.id }
+]
+
 
 [alert_1, alert_2, alert_3, alert_4].each do |attribute|
   alert = Alert.create!(attribute)
   puts "create #{alert.title}"
 end
 
+suggestions = [
+  { title: 'Take a Walk', description: 'Get some fresh air. Take a short walk outside.' },
+  { title: 'Read a Book', description: 'Spend some time reading a good book.' },
+  { title: 'Exercise', description: 'Move your body. Do a quick workout or stretch.' },
+  { title: 'Eat Healthy', description: 'Have a balanced meal with fruits and vegetables.' },
+  { title: 'Practice Mindfulness', description: 'Take a few minutes to practice mindfulness or meditation.' },
+  { title: 'Plan Your Day', description: 'Set goals and plan your tasks for the day.' },
+  { title: 'Get Enough Sleep', description: 'Ensure you get a good night\'s sleep.' },
+  { title: 'Call a Friend', description: 'Connect with a friend or loved one.' },
+  { title: 'Learn Something New', description: 'Pick up a new skill or knowledge.' },
+  { title: 'Express Gratitude', description: 'Take a moment to appreciate and express gratitude.' },
+  { title: 'Organize Workspace', description: 'Declutter and organize your workspace.' },
+  { title: 'Take Breaks', description: 'Take short breaks to refresh and recharge.' },
+  { title: 'Listen to Music', description: 'Enjoy some music for relaxation.' },
+  { title: 'Set Priorities', description: 'Prioritize tasks to focus on what matters most.' }
+]
+
+suggestions.each do |attributes|
+  suggestion = Suggestion.create!(attributes)
+  puts "create #{suggestion.title}"
+end
 
 puts "Finished tasks seeding!"
