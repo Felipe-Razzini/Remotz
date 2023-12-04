@@ -10,5 +10,6 @@ class PagesController < ApplicationController
     @projects_status_count = Project.group(:status).count
     @projects_workload_count = Project.joins(:user).group(:username).count
     @tasks_today = Task.where('DATE(start) = ?', Date.today)
+    @task = Task.new
   end
 end
