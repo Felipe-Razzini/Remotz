@@ -1,0 +1,8 @@
+<div id="message-<%= message.id %>">
+  <small>
+    <i><%= message.created_at.strftime("Today at %l:%M %p") %></i>
+    <br>
+    <strong style="color:blue; text-align:center"><%= message.user.username %></strong>
+  </small>
+  <p><%= message.content %></p>
+</div>
