@@ -16,7 +16,7 @@
     <p data-edit-target="info"><%= task.priority %></p>
     <%= link_to raw(' <i class="fa-solid fa-pen"></i>'), edit_task_path(task), data: { edit_target: "info", action: 'click->edit#displayForm' } %>
     <%= link_to task_path(task),
-          data: { edit_target: "info", turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{task.title} task?"} do %>
+          data: { edit_target: "info", turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{task.title} from your tasks?"} do %>
           <i class="fa-solid fa-xmark"></i>
           <% end %>
         <%= f.input :title, label: false, wrapper_html: {class: "d-none", data: { edit_target: "input" }}%>
