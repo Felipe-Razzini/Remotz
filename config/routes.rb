@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :tasks do
     collection do
-      get :all 
+      get :all
     end
   end
   resources :alerts, only: %i[index new create destroy]
@@ -16,4 +16,10 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resources :suggestions, only: %i[index show create]
+  resources :calendars, only: [] do
+    collection do
+      get :month
+      get :week
+    end
+  end
 end

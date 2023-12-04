@@ -1,0 +1,20 @@
+<div class="tasks-container">
+  <%= month_calendar(events: @tasks_cal, end_attribute: :end) do |date, tasks| %>
+    <div class="day-date">
+      <%= date %>
+    </div>
+    <% tasks.each do |task| %>
+      <div class="meeting <%= task.priority %>">
+        <p><strong><%= task.title %></strong></p>
+        <small><%= task.time %></small>
+      </div>
+    <% end %>
+  <% end %>
+  <%# width = "0%"
+  if task.status == "On going"
+  width = "50%"
+  elseif task.status == "pending"
+  width = "20%"
+  else
+  width = "100%" %>
+</div>
