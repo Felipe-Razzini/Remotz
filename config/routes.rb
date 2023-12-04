@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   resources :projects
   resources :tasks
   resources :alerts, only: %i[index new create destroy]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
 end

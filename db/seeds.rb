@@ -13,7 +13,10 @@ Project.destroy_all
 Task.destroy_all
 User.destroy_all
 Alert.destroy_all
+Chatroom.destroy_all
 
+
+Chatroom.create(name: "General")
 christine = User.create!(email: 'christine.onsi@gmail.com', password: 'chris123', username: 'Christine')
 tom = User.create!(email: 'test@test1.com', password: '12ss23', username: 'Tom')
 felipe = User.create!(email: 'feliperazzini@hotmail.com', password: 'felipe', username: 'Felipe')
