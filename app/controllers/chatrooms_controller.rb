@@ -3,7 +3,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
 
-    redirect_to chatroom_path(@chatroom)
+    # redirect_to chatroom_path(@chatroom)
   end
 
 

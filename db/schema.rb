@@ -52,6 +52,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_03_200741) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "suggestions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.string "priority"
