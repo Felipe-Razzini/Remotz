@@ -1,0 +1,25 @@
+.form-wrapper {
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  position: relative;
+}
+
+
+.form-new-task {
+  background-color: white;
+  z-index: 30;
+  border-radius: 8px;
+  width: 600px;
+  height: 400px;
+  padding: 40px;
+}

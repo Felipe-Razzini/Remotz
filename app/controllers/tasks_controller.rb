@@ -30,7 +30,7 @@ class TasksController < ApplicationController
     @task.user = current_user
 
     if @task.save
-      redirect_to tasks_path
+      redirect_to request.referrer
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,14 +44,13 @@ class TasksController < ApplicationController
 
     @task.update(task_params)
 
-    redirect_to dashboard_path
+    redirect_to request.referrer
   end
 
   def destroy
-
     @task.destroy
 
-    redirect_to tasks_path, status: :see_other
+    redirect_to request.referrer, status: :see_other
   end
 
   private

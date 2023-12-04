@@ -1,13 +1,22 @@
 <div class="d-flex">
   <%# <%= render "shared/sidebar" %>
-  <div class="dashboard-grid">
+  <div class="dashboard-grid" data-controller="add">
 
-    <div class="two dashboard-item grid-col-span-2">
-
-      <div class="tasks-dashboard-card-title">
-        <p><strong>Today tasks</strong></p>
-        <%= link_to "Add", new_task_path(@task), class: "btn-add-task"%>
+    <div class="d-none form-wrapper" data-add-target="form">
+      <div class="form-new-task">
+        <%= render "tasks/form_task_JS" %>
       </div>
+    </div>
+
+    <div class="two dashboard-item grid-col-span-2" >
+
+      <div class="tasks-dashboard-card-title" >
+        <p><strong>Today tasks</strong></p>
+        <%= link_to "Add", new_task_path(@task), class: "btn-add-task", data: { action: "click->add#displayForm" }%>
+      </div>
+
+
+      <%# FORM TO CREATE NEW TASK - HIDDEN%>
 
       <%= render "tasks/tasks_today" %>
     </div>

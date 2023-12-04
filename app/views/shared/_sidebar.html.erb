@@ -14,9 +14,8 @@
     <li class="pt-4 border-top"><i class="fa-solid fa-chart-pie sidebar-icon"></i><%= link_to "Dashboard", dashboard_path %></li>
     <li><i class="fa-solid fa-calendar-days sidebar-icon"></i><%= link_to "Planner", tasks_path %></li>
     <li><i class="fa-solid fa-bell sidebar-icon"></i><%= link_to "Reminders", alerts_path %></li>
-    <%# <><i class="fa-solid fa-list-check sidebar-icon"></i><%= link_to "Tasks", all_tasks_path %>
     <li><i class="fa-solid fa-sitemap sidebar-icon"></i><%= link_to "Projects", projects_path %></li>
-      <li><i class="fa-solid fa-comments sidebar-icon"></i><%= link_to "Chat",chatroom_path(current_user.chatrooms.last)%></li>
+    <li><i class="fa-solid fa-comments sidebar-icon"></i><%= link_to "Chat",chatroom_path(current_user.chatrooms.last)%></li>
     <li class="pb-4 border-bottom"><a href="#"><i class="fa-solid fa-music sidebar-icon"></i>Music</a></li>
 
     <%# <li><a href="#"><i class="fa-regular fa-map-location-dot sidebar-icon"></i>Offices</a></li>

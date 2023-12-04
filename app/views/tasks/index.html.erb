@@ -10,6 +10,7 @@
       <a class="nav-link" href="#" data-task-calendar-target="link" data-action="click->task-calendar#switchToAllTasks">All Tasks</a>
     </li>
   </ul>
+
   <%# Monthly %>
   <div class="<%= params[:type] == 'month' ? '' : 'd-none' %>" data-task-calendar-target="month">
     <%= month_calendar(events: @tasks_cal, end_attribute: :end) do |date, tasks| %>
@@ -40,7 +41,6 @@
     <% end %>
   </div>
 </div>
-
 
 <div class="d-none" data-task-calendar-target="alltasks">
 <%= render "tasks/all" %>
