@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-controller="alert">
   <div class="d-flex justify-content-between mt-4">
     <h4 class="text-primary alert-title">
       <i class="fa-solid fa-bell"></i>
@@ -6,8 +6,14 @@
     </h4>
 
     <button class="btn btn-primary">
-      <%= link_to "New Alert", new_alert_path, class: "text-white text-decoration-none" %>
+      <%= link_to "New Alert", new_alert_path, class: "text-white text-decoration-none", data: {action: "click->alert#displayForm"} %>
     </button>
+  </div>
+
+  <div class="d-none form-wrapper" data-alert-target="form">
+    <div class="form-new-alert">
+      <%= render "form_alert_JS" %>
+    </div>
   </div>
 
   <div class="mt-5">

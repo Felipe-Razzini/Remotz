@@ -1,6 +1,10 @@
 
 <% @alerts.each do |alert| %>
   <div class="alert-card">
+    <%= link_to alert_path(alert),
+      data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{alert.title} from your alerts?"} do %>
+      <i class="fa-solid fa-xmark"></i>
+    <% end %>
     <h4><strong><%= alert.title %></strong></h4>
     <p><%= alert.description %></p>
   </div>
