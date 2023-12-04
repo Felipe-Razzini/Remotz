@@ -1,8 +1,9 @@
 <div id="message-<%= message.id %>">
-  <small>
-    <i><%= message.created_at.strftime("Today at %l:%M %p") %></i>
-    <br>
-    <strong style="color:blue; text-align:center"><%= message.user.username %></strong>
-  </small>
+  <div class="message-info" >
+    <div class="mb-2 ">
+      <strong class="message-username"><%= message.user.username %></strong>
+    </div>
+    <div><i><%= message.created_at.strftime("Today at %l:%M %p") %></i></div>
+  </div>
   <p><%= message.content %></p>
 </div>

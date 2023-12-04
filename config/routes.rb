@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
 
   resources :projects
-  resources :tasks
+  resources :tasks do
+    collection do
+      get :all 
+    end
+  end
   resources :alerts, only: %i[index new create destroy]
   resources :chatrooms, only: :show do
     resources :messages, only: :create

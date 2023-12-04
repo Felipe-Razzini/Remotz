@@ -11,6 +11,11 @@ class TasksController < ApplicationController
 
   end
 
+  def all
+    @tasks = current_user.tasks
+  end
+
+
   def show
 
   end
@@ -48,6 +53,8 @@ class TasksController < ApplicationController
 
     redirect_to tasks_path, status: :see_other
   end
+
+
 
   private
 
