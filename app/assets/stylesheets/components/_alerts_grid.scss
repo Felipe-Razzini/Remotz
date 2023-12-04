@@ -23,3 +23,13 @@
     font-size: 16px;
   }
 }
+
+.alert-title {
+  i {
+  color: white;
+  background-color: $purple;
+  border-radius: 4px;
+  padding: 6px;
+  margin-right: 4px;
+  }
+}

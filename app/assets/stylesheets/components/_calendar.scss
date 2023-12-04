@@ -37,10 +37,22 @@
   // background: #1edd88;
   margin-bottom: 4px;
   // transition: background 0.3s ease;
+  // position: relative;
 
   p {
     margin-bottom: 0;
   }
+
+  i {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    float: right;
+  }
+}
+
+.meeting:hover {
+  background: $light-pink;
 }
 
 .High {
@@ -52,9 +64,4 @@
 }
 .Low {
   background-color:#D1ECDF;
-}
-
-.meeting:hover {
-  background: $purple;
-  color: white;
 }
