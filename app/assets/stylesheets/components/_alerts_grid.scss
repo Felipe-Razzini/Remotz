@@ -37,3 +37,43 @@
   margin-right: 4px;
   }
 }
+
+.alert-sample {
+  border-radius: 5px;
+  padding: 15px 20px;
+  background-color: $light-pink;
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+    padding-top: 4px;
+    font-size: 16px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 1;
+  right: 0;
+  margin-right: 5px;
+  width: 600px;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+// .fadeIn {
+//   opacity: 1;
+//   transition: opacity 3s ease-in-out;
+// }
+
+// .fadeOut {
+//   opacity: 0;
+//   transition: opacity 3s ease-in-out;
+// }
