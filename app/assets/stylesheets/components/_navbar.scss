@@ -12,6 +12,19 @@
 }
 .active{
   background-color: $purple;
-  color: white;
+  color: white !important;
   border-radius: 4px;
+
+}
+.cal-tab{
+  margin: 2px 0px !important;
+}
+.cal-tab:hover{
+
+  // border: 1px solid $purple;
+  color: $purple !important;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #4d4d9d69;
+
 }
