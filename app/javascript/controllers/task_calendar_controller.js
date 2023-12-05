@@ -1,36 +1,39 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="task-calendar"
 export default class extends Controller {
-  static targets =["week","month","alltasks", "link"]
+  static targets = ["week", "month", "alltasks", "link"];
+
   connect() {
     // console.log(this.weekTarget);
   }
 
-  switchToMonth(e) {
-
+  switchToView(e, viewTarget) {
     e.preventDefault();
-    this.monthTarget.classList.remove("d-none");
-    this.weekTarget.classList.add("d-none");
-    this.alltasksTarget.classList.add("d-none");
+    this.hideAllViews();
+    viewTarget.classList.remove("d-none");
+    this.setActiveLink(e.currentTarget);
+  }
 
+  switchToMonth(e) {
+    this.switchToView(e, this.monthTarget);
   }
 
   switchToWeek(e) {
-    e.preventDefault();
-    this.weekTarget.classList.remove("d-none");
-    this.monthTarget.classList.add("d-none");
-    this.alltasksTarget.classList.add("d-none");
-
+    this.switchToView(e, this.weekTarget);
   }
 
-  switchToAllTasks(e){
-    e.preventDefault();
-    this.weekTarget.classList.add("d-none");
-    this.monthTarget.classList.add("d-none");
-    this.alltasksTarget.classList.remove("d-none");
-
+  switchToAllTasks(e) {
+    this.switchToView(e, this.alltasksTarget);
   }
 
-  
+  hideAllViews() {
+    [this.weekTarget, this.monthTarget, this.alltasksTarget].forEach((view) =>
+      view.classList.add("d-none")
+    );
+  }
+
+  setActiveLink(link) {
+    this.linkTargets.forEach((el) => el.classList.remove("active"));
+    link.classList.add("active");
+  }
 }
