@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   helper_method :dashboard_page?
 
   def home
+    redirect_to new_user_session_path
   end
 
   def dashboard
