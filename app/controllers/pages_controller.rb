@@ -13,4 +13,7 @@ class PagesController < ApplicationController
     @tasks_today = Task.where('DATE(start) = ?', Date.today)
     @task = Task.new
   end
+
+  def music
+  end
 end
