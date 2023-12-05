@@ -7,6 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
+require "cloudinary"
+
+
 puts 'Cleaning database...'
 
 Project.destroy_all
@@ -15,11 +19,14 @@ User.destroy_all
 Alert.destroy_all
 Chatroom.destroy_all
 
-
 Chatroom.create(name: "General")
+
 christine = User.create!(email: 'christine.onsi@gmail.com', password: 'chris123', username: 'Christine')
+
 tom = User.create!(email: 'test@test1.com', password: '12ss23', username: 'Tom')
-felipe = User.create!(email: 'feliperazzini@hotmail.com', password: 'felipe', username: 'Felipe')
+
+file_path = File.open(Rails.root.join('app/assets/images/Avatar-Felipe.jpg'))
+felipe = User.create!(email: 'feliperazzini@hotmail.com', password: 'felipe', username: 'Felipe', avatar: "Avatar-Felipe.jpg")
 
 projects = [
   project_1 = { name: "Task management application", description: "Build task managment application", start_date: "13-11-2023", end_date: "30-1-2024", status: "In progress", user_id: felipe.id },
