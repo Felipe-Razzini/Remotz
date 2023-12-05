@@ -1,6 +1,7 @@
-<div class="d-flex">
+<div class="d-flex" data-controller="alert">
   <%# <%= render "shared/sidebar" %>
-  <div class="dashboard-grid" data-controller="add">
+
+  <div class="dashboard-grid" data-controller="add" >
 
     <div class="d-none form-wrapper" data-add-target="form">
       <div class="form-new-task">
@@ -51,14 +52,27 @@
     </div>
 
     <div class="four dashboard-item">
-      <p class="dashboard-card-title"><strong>Tasks workload</strong></p>
+      <div class="d-flex align-items-center">
+        <p class="dashboard-card-title"><strong>Tasks workload</strong></p>
+        <span data-action="click->alert#displayAlert" style="height: 50px; width: 50px; margin-left: 4px; background-color: #FBFBF9; color: #FBFBF9; cursor: default;">click</span>
+      </div>
       <div>
         <%= bar_chart @projects_workload_count, width: "100%", height: "150px" %>
       </div>
     </div>
 
+    <div class="hidden overlay" data-alert-target="overlay">
+      <div class="alert-sample">
+      <h4><strong><%= Alert.first.title %></strong></h4>
+      <p><%= Alert.first.description %></p>
+    </div>
+    </div>
+
+
     <div class="five grid-col-span-3">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO3Cnq2J?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
+
+
 </div>
