@@ -28,7 +28,7 @@ class PagesController < ApplicationController
       http.use_ssl = true
 
       request = Net::HTTP::Get.new(url)
-      request["X-RapidAPI-Key"] = '0ece67adb4mshdfda884f682c206p1c719fjsn8c5a72687caf'
+      request["X-RapidAPI-Key"] = ENV['OPEN_SPOTIFY_KEY']
       request["X-RapidAPI-Host"] = 'spotify-web2.p.rapidapi.com'
 
       @response = JSON.parse(http.request(request).body)

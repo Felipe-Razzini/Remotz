@@ -14,7 +14,7 @@ export default class extends Controller {
     const url = `https://spotify-web2.p.rapidapi.com/search/?q=${this.inputTarget.value}&type=multi&offset=0&limit=10&numberOfTopResults=5`
     fetch(url, {
       headers: {
-        'X-RapidAPI-Key': '0ece67adb4mshdfda884f682c206p1c719fjsn8c5a72687caf',
+        'X-RapidAPI-Key': ENV['OPEN_SPOTIFY_KEY'],
         'X-RapidAPI-Host': 'spotify-web2.p.rapidapi.com'}})
       .then(response => response.json())
       .then((data) => {
