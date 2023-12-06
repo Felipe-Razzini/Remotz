@@ -1,6 +1,6 @@
 .chatroom {
-  // background: white;
-  background: url("https://i.pinimg.com/originals/31/33/0e/31330e8bf338610de143291bda0bac21.jpg");
+  background: $light-pink;
+  // background: url("https://i.pinimg.com/originals/31/33/0e/31330e8bf338610de143291bda0bac21.jpg");
   opacity: 0.8;
   margin-top: 9px;
   height: calc(100vh - 75px);
@@ -17,7 +17,8 @@
 
   .messages {
     height: 100%;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding: 1rem;
   }
 

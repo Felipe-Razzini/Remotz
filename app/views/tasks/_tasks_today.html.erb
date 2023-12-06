@@ -21,7 +21,7 @@
               <i class="fa-solid fa-xmark"></i>
               <% end %>
             <%= f.input :title, label: false, wrapper_html: {class: "d-none", data: { edit_target: "input" }}%>
-            <%= f.input :status, label: false, wrapper_html: {class: "d-none", data: { edit_target: "input" }}%>
+            <%= f.input :status, label: false, collection: ['Completed', 'In Progress', 'Delayed'], wrapper_html: {class: "d-none", data: { edit_target: "input" }}%>
             <%= f.input :priority , label: false, :collection => %w[High Medium Low], wrapper_html: {class: "d-none", data: { edit_target: "input" }} %>
             <%= f.submit "Update", class: "btn btn-primary new-btn d-none", data: { edit_target: "input" }  %>
     </div>
