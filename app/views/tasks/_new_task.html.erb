@@ -1,0 +1,9 @@
+<%= simple_form_for @task, { class: 'custom-form-class' } do |f| %>
+  <%= f.input :title%>
+  <%= f.input :status, collection: ["In progress", "Delayed"] %>
+  <%= f.input :priority , :collection => %w[High Medium Low] %>
+  <%# <%= f.input :status , :collection => %w[started In Progress Delayed]%>
+  <%= f.input :start%>
+  <%= f.input :end%>
+  <%= f.submit "Submit", class: "btn btn-primary new-btn" %>
+<% end %>
