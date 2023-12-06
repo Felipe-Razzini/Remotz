@@ -14,13 +14,22 @@ export default class extends Controller {
   //   this.formTarget.classList.remove('d-none');
   // }
 
-  displayAlert() {
-    this.overlayTarget.classList.add("fadeIn")
-    this.overlayTarget.classList.remove("hidden")
 
-    setTimeout(() => {
-      this.overlayTarget.classList.add("fadeOut")
-      this.overlayTarget.classList.add("hidden")
-    }, 4000);
+  displayAlert() {
+    this.overlayTarget.classList.remove("d-none")
+    this.overlayTarget.classList.add("animate__animated", "animate__bounceInRight")
+
+      setTimeout(() => {
+        this.overlayTarget.classList.remove("animate__bounceInRight")
+        this.overlayTarget.classList.add("hidden")
+    }, 5000);
   }
+
+  // displayAlert() {
+  //   this.overlayTarget.classList.remove("hidden")
+
+  //   setTimeout(() => {
+  //     this.overlayTarget.classList.add("hidden")
+  //   }, 4000);
+  // }
 }

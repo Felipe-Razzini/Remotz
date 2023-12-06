@@ -13,4 +13,26 @@ class PagesController < ApplicationController
     @tasks_today = Task.where('DATE(start) = ?', Date.today)
     @task = Task.new
   end
+
+  def music
+    query = params[:query]
+    @spotify_url = get_spotify_url(query) if query.present?
+  end
+
+  private
+
+  def get_spotify_url(query)
+    if query
+      url = URI("https://spotify-web2.p.rapidapi.com/search/?q=#{query}&type=multi&offset=0&limit=10&numberOfTopResults=5")
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true
+
+      request = Net::HTTP::Get.new(url)
+      request["X-RapidAPI-Key"] = ENV['OPEN_SPOTIFY_KEY']
+      request["X-RapidAPI-Host"] = 'spotify-web2.p.rapidapi.com'
+
+      @response = JSON.parse(http.request(request).body)
+      @rel_url = @response["albums"]["items"][0]["data"]["uri"].split("spotify:").last.gsub(":","/")
+    end
+  end
 end

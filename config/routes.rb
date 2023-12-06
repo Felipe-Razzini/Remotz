@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
   get "dashboard", to: "pages#dashboard"
+  get "music", to: "pages#music"
 
   resources :projects
   resources :tasks do
