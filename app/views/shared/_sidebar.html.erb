@@ -18,7 +18,7 @@
     <li class="pt-4 border-top"><i class="fa-solid fa-chart-pie sidebar-icon"></i><%= link_to "Dashboard", dashboard_path %></li>
     <li><i class="fa-solid fa-calendar-days sidebar-icon"></i><%= link_to "Planner", tasks_path %></li>
     <li><i class="fa-solid fa-bell sidebar-icon"></i><%= link_to "Reminders", alerts_path %></li>
-    <li><i class="fa-solid fa-sitemap sidebar-icon"></i><%= link_to "Projects", projects_path %></li>
+    <%# <li><i class="fa-solid fa-sitemap sidebar-icon"></i><%= link_to "Projects", projects_path</li> %>
     <li><i class="fa-solid fa-comments sidebar-icon"></i>
     <% if current_user.chatrooms.any? %>
       <%= link_to "Chat",chatroom_path(current_user.chatrooms.last) %>

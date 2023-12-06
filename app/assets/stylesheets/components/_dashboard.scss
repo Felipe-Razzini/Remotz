@@ -72,13 +72,13 @@
 
 .dashboard-item {
   padding: 0 1rem 1rem 1rem;
-  background-color: #FBFBF9;
+  // background-color: #FBFBF9;
   border-radius: 10px;
   box-shadow: 1px 1px 40px 1px rgb(230, 230, 250);
 }
 
 .dashboard-item:hover{
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.61);
+  box-shadow: 1px 1px 40px 1px lavender;
   transform: scale(1.02)
 }
 
@@ -125,7 +125,7 @@
   color: $purple;
   text-align: center;
   align-items: center;
-  background-color: $beige;
+  background-color: white;
 
   a {
     text-decoration: none;
@@ -147,7 +147,7 @@
   top: 0;
   padding-top: 10px;
   color: $purple;
-  background-color: $beige;
+  background-color: white;
 }
 
 .donut-chart {

@@ -3,7 +3,6 @@ class Task < ApplicationRecord
   belongs_to :user
 
   validates :title, :priority, :start, :end, presence: true
-  validates :title, uniqueness: true
 
 
   default_scope -> { order(:start) }

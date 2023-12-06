@@ -1,10 +1,11 @@
-<div class="d-flex" data-controller="alert">
+<div class="d-flex">
   <%# <%= render "shared/sidebar" %>
 
   <div class="dashboard-grid" data-controller="add" >
 
-    <div class="d-none form-wrapper" data-add-target="form">
+    <div class="d-none form-wrapper" data-add-target="form" >
       <div class="form-new-task">
+        <span data-action="click->add#hideForm">X</span>
         <%= render "tasks/form_task_JS" %>
       </div>
     </div>
@@ -16,10 +17,10 @@
         <%= link_to "Add", new_task_path(@task), class: "btn-add-task", data: { action: "click->add#displayForm" }%>
       </div>
 
-
       <%# FORM TO CREATE NEW TASK - HIDDEN%>
-
-      <%= render "tasks/tasks_today" %>
+      <div>
+        <%= render "tasks/tasks_today" %>
+      </div>
     </div>
 
     <div class="one dashboard-item grid-col-span-2">
@@ -52,20 +53,10 @@
     </div>
 
     <div class="four dashboard-item">
-      <div class="d-flex align-items-center">
         <p class="dashboard-card-title"><strong>Tasks workload</strong></p>
-        <span data-action="click->alert#displayAlert" style="height: 50px; width: 50px; margin-left: 4px; background-color: #FBFBF9; color: #FBFBF9; cursor: default;">click</span>
-      </div>
       <div>
         <%= bar_chart @projects_workload_count, width: "100%", height: "150px" %>
       </div>
-    </div>
-
-    <div class="d-none overlay" data-alert-target="overlay">
-      <div class="alert-sample">
-      <h4><strong><%= Alert.first.title %></strong></h4>
-      <p><%= Alert.first.description %></p>
-    </div>
     </div>
 
     <div class="five grid-col-span-3">
