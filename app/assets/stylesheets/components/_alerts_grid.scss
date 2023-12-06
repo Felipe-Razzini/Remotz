@@ -1,6 +1,10 @@
 .alert-container {
-  width: 100vw!important;
   overflow-x: hidden;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: start;
+  width: 85%;
+  margin-left: 0;
 }
 
 .alerts-grid {

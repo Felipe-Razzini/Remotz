@@ -15,7 +15,7 @@ export default class extends Controller {
   }
 
   hideForm(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     this.formTarget.classList.add('d-none')
   }
@@ -27,7 +27,8 @@ export default class extends Controller {
 
       setTimeout(() => {
         this.overlayTarget.classList.remove("animate__bounceInRight")
-        this.overlayTarget.classList.add("hidden")
+        this.overlayTarget.classList.add("animate__bounceOutRight")
+        // this.overlayTarget.classList.add("hidden")
     }, 5000);
   }
 

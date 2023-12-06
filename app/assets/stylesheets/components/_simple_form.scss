@@ -8,6 +8,14 @@
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.6);
+
+  span {
+    float: right;
+    margin-top: -30px;
+    margin-right: -20px;
+    top: 0;
+    cursor: pointer;
+  }
 }
 
 body {
@@ -31,4 +39,12 @@ body {
   width: 600px;
   height: 400px;
   padding: 40px;
+
+  span {
+    float: right;
+    margin-top: -30px;
+    margin-right: -20px;
+    top: 0;
+    cursor: pointer;
+  }
 }
