@@ -2,17 +2,23 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="alert"
 export default class extends Controller {
-  static targets = ["overlay"]
+  static targets = ["overlay", "form"]
 
   connect() {
     console.log(this.formTarget);
   }
 
-  // displayForm(e) {
-  //   e.preventDefault();
+  displayForm(e) {
+    e.preventDefault();
 
-  //   this.formTarget.classList.remove('d-none');
-  // }
+    this.formTarget.classList.remove('d-none');
+  }
+
+  hideForm(e) {
+    e.preventDefault();
+
+    this.formTarget.classList.add('d-none')
+  }
 
 
   displayAlert() {

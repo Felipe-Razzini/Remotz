@@ -13,4 +13,10 @@ export default class extends Controller {
 
     this.formTarget.classList.remove("d-none");
   }
+
+  hideForm(e) {
+    e.preventDefault()
+
+    this.formTarget.classList.add('d-none')
+  }
 }

@@ -1,8 +1,16 @@
 
-<div class="container music-box">
+<div class="container music-box" data-controller="alert">
 
+  <span data-action="click->alert#displayAlert" style="height: 50px; width: 50px; margin-left: 4px; background-color: #FBFBF9; color: #FBFBF9; cursor: default;">click</span>
   <div class="title-container">
     <h4>DISCOVER YOUR PRODUCTIVE BEATS</h4>
+  </div>
+
+  <div class="d-none overlay mt-3" data-alert-target="overlay">
+    <div class="alert-sample">
+      <h4><strong><%= Alert.first.title %></strong></h4>
+      <p><%= Alert.first.description %></p>
+    </div>
   </div>
 
   <div data-controller="musics" data-musics-apikey-value="<%= ENV["OPEN_SPOTIFY_KEY"] %>">

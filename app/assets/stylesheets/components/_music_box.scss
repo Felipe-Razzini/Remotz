@@ -10,9 +10,9 @@
 
 .music-grid {
   padding: 1rem 1rem 1rem 1rem;
-  background-color: #FBFBF9;
   border-radius: 10px;
-  box-shadow: 1px 1px 40px 1px rgb(230, 230, 250);
+  background-color: $beige;
+  // box-shadow: 1px 1px 40px 1px rgb(230, 230, 250);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;

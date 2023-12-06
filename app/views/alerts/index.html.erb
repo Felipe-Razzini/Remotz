@@ -1,4 +1,4 @@
-<div class="container" data-controller="alert">
+<div class="container alert-container" data-controller="alert">
   <div class="d-flex justify-content-between mt-4">
     <h4 class="text-primary alert-title">
       <i class="fa-solid fa-bell"></i>
@@ -10,7 +10,7 @@
     </button>
   </div>
 
-  <div class="d-none form-wrapper" data-alert-target="form">
+  <div class="d-none form-wrapper" data-alert-target="form" data-action="click->alert#hideForm">
     <div class="form-new-alert">
       <%= render "form_alert_JS" %>
     </div>
