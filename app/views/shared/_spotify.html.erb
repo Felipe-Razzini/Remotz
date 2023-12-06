@@ -5,7 +5,7 @@
     <h4>DISCOVER YOUR PRODUCTIVE BEATS</h4>
   </div>
 
-  <div data-controller="musics">
+  <div data-controller="musics" data-musics-apikey-value="<%= ENV["OPEN_SPOTIFY_KEY"] %>">
     <%= form_with url: music_path, method: :get, html: {class:
     'form-inline align-items-center', data: {musics_target: "form"}} do |form| %>
     <%= form.text_field :query,
