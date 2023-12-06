@@ -10,7 +10,7 @@ module ApplicationHelper
       request["X-RapidAPI-Key"] = '0ece67adb4mshdfda884f682c206p1c719fjsn8c5a72687caf'
       request["X-RapidAPI-Host"] = 'spotify-web2.p.rapidapi.com'
 
-      @response = JSON.parse(http.request(request).body)
+      @response = JSON.parse(http.request(request))
       @rel_url = @response["albums"]["items"][0]["data"]["uri"].split("spotify:").last.gsub(":","/")
     end
   end

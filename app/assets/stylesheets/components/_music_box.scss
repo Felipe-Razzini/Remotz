@@ -1,0 +1,49 @@
+
+.music-box {
+  padding: 20px;
+  margin: 30px auto;
+
+  form {
+    margin-bottom: 20px;
+  }
+}
+
+.music-grid {
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #FBFBF9;
+  border-radius: 10px;
+  box-shadow: 1px 1px 40px 1px rgb(230, 230, 250);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px 20px;
+  grid-template-areas:
+    ". . .";
+}
+
+.music-button {
+  background-color: $purple;
+  color: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: $purple;
+  box-sizing: border-box;
+}
+
+.music-query {
+  padding: 4px 6px;;
+  width: 50%;
+}
+
+.title-container {
+  // background: linear-gradient(to right, #4d4d9ddd, #4d4d9dce, #4d4d9d98, #4d4d9d4e, #4d4d9d3d, #4d4d9d1b, #4d4d9d00);
+  // color: white;
+  // padding: 4px 4px;
+  // border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+  h4 {
+    margin-bottom: 0;
+  }
+}

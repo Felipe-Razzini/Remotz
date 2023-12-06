@@ -1,11 +1,30 @@
 
-<div>
-  <%= form_with(url: music_path, method: :get) do |form| %>
-  <%= form.text_field :query, placeholder: "What do you want to listen?" %>
-  <%= form.submit "Enter" %>
-<% end %>
-</div>
+<div class="container music-box">
 
-<% if @spotify_url.present? %>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/<%= @rel_url %>?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<% end %>
+  <div class="title-container">
+    <h4>DISCOVER YOUR PRODUCTIVE BEATS</h4>
+  </div>
+
+  <div data-controller="musics">
+    <%= form_with url: music_path, method: :get, html: {class:
+    'form-inline align-items-center', data: {musics_target: "form"}} do |form| %>
+    <%= form.text_field :query,
+                        placeholder: "What do you want to listen?",
+                        class: "music-query",
+                        value: params[:query],
+                        data: {
+                          musics_target: "input",
+                          action: "keyup->musics#update"
+                          } %>
+    <%= form.submit "Enter", class: "music-button" %>
+    <% end %>
+
+      <div data-musics-target="list">
+        <!-- grid for music query results -->
+      </div>
+
+    <%# <% if @spotify_url.present? %>
+      <%# <iframe style="border-radius:12px" src="https://open.spotify.com/embed/<%= @rel_url?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <% end %>
+  </div>
+</div>
