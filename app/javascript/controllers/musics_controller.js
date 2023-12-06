@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="musics"
 export default class extends Controller {
   static targets = ["form", "input", "list"]
+  static values = {apikey: String}
   connect() {
     // console.log(this.formTarget)
     // console.log(this.inputTarget)
@@ -14,7 +15,7 @@ export default class extends Controller {
     const url = `https://spotify-web2.p.rapidapi.com/search/?q=${this.inputTarget.value}&type=multi&offset=0&limit=10&numberOfTopResults=5`
     fetch(url, {
       headers: {
-        'X-RapidAPI-Key': ENV['OPEN_SPOTIFY_KEY'],
+        'X-RapidAPI-Key': this.apikeyValue,
         'X-RapidAPI-Host': 'spotify-web2.p.rapidapi.com'}})
       .then(response => response.json())
       .then((data) => {
