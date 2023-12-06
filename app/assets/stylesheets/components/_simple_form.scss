@@ -22,6 +22,14 @@ body {
   position: relative;
 }
 
+.form-new-calendar-task {
+  background-color: white;
+  z-index: 30;
+  border-radius: 8px;
+  width: 600px;
+  height: 500px;
+  padding: 40px;
+}
 
 .form-new-task {
   background-color: white;

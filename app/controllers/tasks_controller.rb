@@ -9,6 +9,7 @@ class TasksController < ApplicationController
 
     @tasks_cal = Task.where(start: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
 
+    @task = Task.new
   end
 
   def all
