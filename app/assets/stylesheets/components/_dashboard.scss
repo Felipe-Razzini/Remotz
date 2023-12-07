@@ -35,7 +35,7 @@
 // }
 
 .dashboard-card-top {
-  z-index: 2;
+  z-index: 1;
   background-color: $beige;
   padding-top: 10px;
 }
@@ -90,6 +90,10 @@
   justify-content: space-between;
   font-weight: 600;
   z-index: 1;
+}
+
+.projects-header {
+  z-index: 50;
 }
 
 .dashboard-card-headers {
