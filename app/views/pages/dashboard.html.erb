@@ -32,10 +32,10 @@
           <legend class="col-form-label p-0">Filters</legend> %>
           <form>
             <div class="form-group tag-item">
-              <input class="tag-selector" type="checkbox" id="leader">
-              <label for="leader" data-action="click->displayLeader">Project Leader</label>
-              <input class="tag-selector" type="checkbox" id="date">
-              <label for="date" data-action="click->displayDate">Due date</label>
+              <input class="tag-selector" type="checkbox" id="leader" data-projects-target="leader">
+              <label for="leader" data-action="click->projects#displayLeader">Project Leader</label>
+              <input class="tag-selector" type="checkbox" id="date" data-projects-target="date">
+              <label for="date" data-action="click->projects#displayDate">Due date</label>
             </div>
           </form>
         <%# </div> %>
