@@ -25,7 +25,22 @@
 
     <div class="one dashboard-item grid-col-span-2">
 
-      <p class="projects-dashboard-card-title pt-2"><strong>Project summary</strong></p>
+      <div class="d-flex align-items-center justify-content-between">
+        <p class="projects-dashboard-card-title pt-2"><strong>Project summary</strong></p>
+
+        <%# <div class="d-flex">
+          <legend class="col-form-label p-0">Filters</legend> %>
+          <form>
+            <div class="form-group tag-item">
+              <input class="tag-selector" type="checkbox" id="leader">
+              <label for="leader">Project Leader</label>
+              <input class="tag-selector" type="checkbox" id="date">
+              <label for="date">Due date</label>
+            </div>
+          </form>
+        <%# </div> %>
+
+      </div>
 
       <%= render "projects/project_dashboard" %>
 

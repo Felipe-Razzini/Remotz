@@ -157,3 +157,29 @@
 .chart-labels p {
   font-size: 10px;
 }
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  font-size: 10px;
+  color: #00c3ffc5;
+  font-weight: bolder;
+  border: 1px solid #00c3ff;
+  border-radius: 20px;
+  background-color: #00c3ff2d;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+.tag-selector:checked + label {
+  color: white;
+  background-color: #00c3ff;
+}
+
+.tag-item {
+  display: inline-block;
+}
