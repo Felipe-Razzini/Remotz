@@ -10,8 +10,6 @@
 
      <%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view + '&type=week', class: 'btn btn-outline-primary' %>
 
-
-
     <% if calendar.number_of_weeks == 1 %>
       <span class="calendar-title btn btn-primary"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %></span>
     <% else %>
