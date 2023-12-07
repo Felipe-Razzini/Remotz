@@ -5,7 +5,7 @@ class Task < ApplicationRecord
   validates :title, :priority, :start, :end, presence: true
 
 
-  default_scope -> { order(:start) }
+  # default_scope -> { order(:start) }
 
   def time
     "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"

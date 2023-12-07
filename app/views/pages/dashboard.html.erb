@@ -23,9 +23,9 @@
       </div>
     </div>
 
-    <div class="one dashboard-item grid-col-span-2">
+    <div class="one dashboard-item grid-col-span-2" data-controller="projects">
 
-      <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center justify-content-between position-sticky sticky-top bg-white">
         <p class="projects-dashboard-card-title pt-2"><strong>Project summary</strong></p>
 
         <%# <div class="d-flex">
@@ -33,9 +33,9 @@
           <form>
             <div class="form-group tag-item">
               <input class="tag-selector" type="checkbox" id="leader">
-              <label for="leader">Project Leader</label>
+              <label for="leader" data-action="click->displayLeader">Project Leader</label>
               <input class="tag-selector" type="checkbox" id="date">
-              <label for="date">Due date</label>
+              <label for="date" data-action="click->displayDate">Due date</label>
             </div>
           </form>
         <%# </div> %>
@@ -70,7 +70,7 @@
     <div class="four dashboard-item">
         <p class="dashboard-card-title"><strong>Tasks workload</strong></p>
       <div>
-        <%= bar_chart @projects_workload_count, width: "100%", height: "150px" %>
+        <%= bar_chart @tasks_workload_count, width: "100%", height: "150px" %>
       </div>
     </div>
 

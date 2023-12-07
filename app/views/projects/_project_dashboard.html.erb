@@ -1,16 +1,49 @@
-<div class="project-grid">
-  <p class="text-start"><strong>Name</strong></p>
-  <p><strong>Start</strong></p>
-  <p><strong>Due date</strong></p>
-  <p><strong>Project Leader</strong></p>
+<div>
+  <div class="project-grid start" data-projects-target="tagStart">
+    <p class="text-start"><strong>Name</strong></p>
+    <p><strong>Start</strong></p>
+    <p><strong>Due date</strong></p>
+    <p><strong>Project Leader</strong></p>
 
-  <% @projects.each do | project| %>
-    <%# <div data-user-id="<%= project.user_id %>
+    <% @projects.each do | project| %>
+      <%# <div data-user-id="<%= project.user_id %>
+        <p class="text-start text-primary"><strong><%= project.name%></strong></p>
+        <p><%= project.start_date.strftime('%-d %b %Y') %></p>
+        <p><%= project.end_date.strftime('%-d %b %Y') %></p>
+        <p><%= project.user.username %></p>
+      <%# </div> %>
+    <% end %>
+  </div>
+
+  <div class="project-grid project-leader d-none" data-projects-target="tagLeader">
+    <p class="text-start"><strong>Name</strong></p>
+    <p><strong>Start</strong></p>
+    <p><strong>Due date</strong></p>
+    <p><strong>Project Leader</strong></p>
+
+    <% @projects_project_leader.each do | project| %>
+      <%# <div data-user-id="<%= project.user_id %>
       <p class="text-start text-primary"><strong><%= project.name%></strong></p>
-      <p><%= project.start_date.strftime('%-d %b %Y') %></p>
-      <p><%= project.end_date.strftime('%-d %b %Y') %></p>
-      <p><%= project.user.username %></p>
-    <%# </div> %>
-  <% end %>
+      <p><%= project.start_date.strftime('%-d %b %Y')%></p>
+      <p><%= project.end_date.strftime('%-d %b %Y')%></p>
+      <p><%= project.user.username%></p>
+      <%# </div> %>
+    <% end %>
+  </div>
 
+  <div class="project-grid due-date d-none" data-projects-target="tagDate">
+    <p class="text-start"><strong>Name</strong></p>
+    <p><strong>Start</strong></p>
+    <p><strong>Due date</strong></p>
+    <p><strong>Project Leader</strong></p>
+
+    <% @projects_due_date.each do | project| %>
+      <%# <div data-user-id="<%= project.user_id %>
+      <p class="text-start text-primary"><strong><%= project.name%></strong></p>
+      <p><%= project.start_date.strftime('%-d %b %Y')%></p>
+      <p><%= project.end_date.strftime('%-d %b %Y')%></p>
+      <p><%= project.user.username%></p>
+      <%# </div> %>
+    <% end %>
+  </div>
 </div>
