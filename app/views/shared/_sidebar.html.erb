@@ -14,19 +14,36 @@
       <% end %>
     </div>
   </div>
-  <ul class="sidebar-list">
-    <li class="pt-4 border-top"><i class="fa-solid fa-chart-pie sidebar-icon"></i><%= link_to "Dashboard", dashboard_path %></li>
-    <li><i class="fa-solid fa-calendar-days sidebar-icon"></i><%= link_to "Planner", tasks_path %></li>
-    <li><i class="fa-solid fa-bell sidebar-icon"></i><%= link_to "Reminders", alerts_path %></li>
+  <ul class="sidebar-list" data-controller="add">
+    <%# Dashboard %>
+    <li class="" data-action="load->add#load" data-add-target="pageName" data-page="<%= dashboard_path %>">
+      <i class="fa-solid fa-chart-pie sidebar-icon"></i><%= link_to "Dashboard", dashboard_path %>
+    </li>
+
+    <%# Planner %>
+    <li data-action="load->add#load" data-add-target="pageName" data-page="<%= tasks_path %>">
+      <i class="fa-solid fa-calendar-days sidebar-icon"></i><%= link_to "Planner", tasks_path %></li>
+
+    <%# Reminders %>
+    <li data-action="load->add#load" data-add-target="pageName" data-page="<%= alerts_path %>">
+      <i class="fa-solid fa-bell sidebar-icon"></i><%= link_to "Reminders", alerts_path %>
+    </li>
+
     <%# <li><i class="fa-solid fa-sitemap sidebar-icon"></i><%= link_to "Projects", projects_path</li> %>
-    <li><i class="fa-solid fa-comments sidebar-icon"></i>
-    <% if current_user.chatrooms.any? %>
-      <%= link_to "Chat",chatroom_path(current_user.chatrooms.last) %>
-      <% else %>
-      <%= link_to "Chat",chatroom_path(Chatroom.first) %>
+
+    <%# Chat %>
+    <li data-action="load->add#load" data-add-target="pageName" data-page="<%= chatroom_path(Chatroom.first) %>">
+      <i class="fa-solid fa-comments sidebar-icon"></i>
+      <% if current_user.chatrooms.any? %>
+        <%= link_to "Chat",chatroom_path(current_user.chatrooms.last) %>
+        <% else %>
+        <%= link_to "Chat",chatroom_path(Chatroom.first) %>
       <% end %>
-      </li>
-    <li class="pb-4 border-bottom"><i class="fa-solid fa-music sidebar-icon"></i><%= link_to "Music", music_path %></li>
+    </li>
+
+    <%# Music %>
+    <li class="" data-action="load->add#load" data-add-target="pageName" data-page="<%= music_path %>" >
+      <i class="fa-solid fa-music sidebar-icon"></i><%= link_to "Music", music_path %></li>
 
     <%# <li><a href="#"><i class="fa-regular fa-map-location-dot sidebar-icon"></i>Offices</a></li>
     <li class="pb-4 border-bottom"><a href="#"><i class="fa-regular fa-comments sidebar-icon"></i>Chat</a></li> %>
