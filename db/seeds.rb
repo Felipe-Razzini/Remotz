@@ -29,7 +29,6 @@ tom = User.create!(email: 'test@test1.com', password: '12ss23', username: 'Tom')
 projects = [
   project_1 = { name: "Task management application", description: "Build task managment application", start_date: "13-11-2023", end_date: "30-1-2024", status: "In progress", user_id: felipe.id },
   project_2 = { name: "Resturant website", description: "Build resturant website", start_date: "14-11-2023", end_date: "12-12-2023", status: "In progress", user_id: christine.id },
-  project_3 = { name: "E-commerce website", description: "Build E-commerce website", start_date: "5-11-2023", end_date: "5-12-2023", status: "Delayed", user_id: tom.id },
   project_4 = { name: "Ruby Project", description: "Build task managment application", start_date: "10-10-2023", end_date: "30-1-2024", status: "Completed", user_id: tom.id },
   project_6 = { name: "Stimulus Project", description: "Build E-commerce website", start_date: "2-12-2023", end_date: "2-1-2024", status: "Delayed", user_id: felipe.id },
   project_7 = { name: "Vue Project", description: "Build task managment application", start_date: "18-11-2023", end_date: "19-12-2023", status: "In progress", user_id: christine.id },
