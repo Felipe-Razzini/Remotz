@@ -1,0 +1,67 @@
+
+<div class="container">
+ <%= image_tag "logo-remotz.png", alt: "task", style:"width:250px;
+    height: 200px;position: fixed;top:0" %>
+  <div class="row justify-content-between">
+    <div class="col-6 col-sm-4" style="margin:15% 0%">
+
+      <h2>Sign in</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+        <div class="form-actions login-btn">
+          <%= f.button :submit, "Log in" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+    <div class="col-6 ">
+      <div id="carouselExampleIndicators" class="carousel slide carousel-position" data-bs-ride="carousel" data-interval="1000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" style="height: 800px">
+          <div class="carousel-item active ">
+            <%= image_tag "task.png", alt: "task", style:"width:100%;
+    height: 100vh" %>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Unlock your Day with seamless Task Mastery</h5>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <%= image_tag "music_task_2.png", alt: "music_task", style:"width:100%;
+    height: 100vh" %>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Tasks and Tunes, your Daily Duo</h5>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <%= image_tag "reminders.png", alt: "reminder", style:"width:100%;
+    height: 100vh" %>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Gentle Alerts,Unlock your best self </h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
