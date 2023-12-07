@@ -4,13 +4,13 @@ export default class extends Controller {
   static targets = ["week", "month", "alltasks", "link"];
 
   connect() {
-    // console.log(this.weekTarget);
+    // console.log("Yo!");
   }
 
   switchToView(e, viewTarget) {
     e.preventDefault();
     this.hideAllViews();
-    this.viewTarget.classList.remove("d-none");
+    viewTarget.classList.remove("d-none");
     this.setActiveLink(e.currentTarget);
   }
 
@@ -28,7 +28,8 @@ export default class extends Controller {
 
   hideAllViews() {
     [this.weekTarget, this.monthTarget, this.alltasksTarget].forEach((view) =>
-      this.view.classList.add("d-none")
+      view.classList.add("d-none")
+      // console.log(view)
     );
   }
 
