@@ -10,7 +10,7 @@ export default class extends Controller {
   switchToView(e, viewTarget) {
     e.preventDefault();
     this.hideAllViews();
-    viewTarget.classList.remove("d-none");
+    this.viewTarget.classList.remove("d-none");
     this.setActiveLink(e.currentTarget);
   }
 
@@ -28,7 +28,7 @@ export default class extends Controller {
 
   hideAllViews() {
     [this.weekTarget, this.monthTarget, this.alltasksTarget].forEach((view) =>
-      view.classList.add("d-none")
+      this.view.classList.add("d-none")
     );
   }
 

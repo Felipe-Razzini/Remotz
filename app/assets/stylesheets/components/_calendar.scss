@@ -65,3 +65,29 @@
 .Low {
   background-color:#D1ECDF;
 }
+
+.week-month-nav {
+
+  transition: 0.5s;
+
+  a {
+    border: none;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 15px;
+
+    &:hover{
+      background: none;
+      color: $purple;
+      font-weight: bold;
+    }
+
+    &:active{
+      background: rgba(0, 0, 0, 0.141)!important;
+      color: $purple;
+      font-weight: bold;
+    }
+
+
+  }
+}

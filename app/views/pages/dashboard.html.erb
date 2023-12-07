@@ -1,7 +1,7 @@
 <div class="d-flex">
   <%# <%= render "shared/sidebar" %>
 
-  <div class="dashboard-grid" data-controller="add" >
+  <div class="dashboard-grid"  data-controller="add">
 
     <div class="d-none form-wrapper" data-add-target="form" >
       <div class="form-new-task">
@@ -23,9 +23,24 @@
       </div>
     </div>
 
-    <div class="one dashboard-item grid-col-span-2">
+    <div class="one dashboard-item grid-col-span-2" data-controller="projects">
 
-      <p class="projects-dashboard-card-title pt-2"><strong>Project summary</strong></p>
+      <div class="d-flex align-items-center justify-content-between position-sticky sticky-top bg-white">
+        <p class="projects-dashboard-card-title pt-2"><strong>Project summary</strong></p>
+
+        <%# <div class="d-flex">
+          <legend class="col-form-label p-0">Filters</legend> %>
+          <form>
+            <div class="form-group tag-item">
+              <input class="tag-selector" type="checkbox" id="leader" data-projects-target="leader">
+              <label for="leader" data-action="click->projects#displayLeader">Project Leader</label>
+              <input class="tag-selector" type="checkbox" id="date" data-projects-target="date">
+              <label for="date" data-action="click->projects#displayDate">Due date</label>
+            </div>
+          </form>
+        <%# </div> %>
+
+      </div>
 
       <%= render "projects/project_dashboard" %>
 
@@ -55,7 +70,7 @@
     <div class="four dashboard-item">
         <p class="dashboard-card-title"><strong>Tasks workload</strong></p>
       <div>
-        <%= bar_chart @projects_workload_count, width: "100%", height: "150px" %>
+        <%= bar_chart @tasks_workload_count, width: "100%", height: "150px" %>
       </div>
     </div>
 

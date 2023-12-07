@@ -21,16 +21,14 @@ Chatroom.destroy_all
 
 Chatroom.create(name: "General")
 
-christine = User.create!(email: 'christine.onsi@gmail.com', password: 'chris123', username: 'Christine')
-
-tom = User.create!(email: 'test@test1.com', password: '12ss23', username: 'Tom')
-
 file_path = File.open(Rails.root.join('app/assets/images/Avatar-Felipe.jpg'))
 felipe = User.create!(email: 'feliperazzini@hotmail.com', password: 'felipe', username: 'Felipe', avatar: "Avatar-Felipe.jpg")
+christine = User.create!(email: 'christine.onsi@gmail.com', password: 'chris123', username: 'Christine')
+tom = User.create!(email: 'test@test1.com', password: '12ss23', username: 'Tom')
 
 projects = [
   project_1 = { name: "Task management application", description: "Build task managment application", start_date: "13-11-2023", end_date: "30-1-2024", status: "In progress", user_id: felipe.id },
-  project_2 = { name: "Resturant website", description: "Build resturant website", start_date: "14-7-2023", end_date: "25-10-2023", status: "Completed", user_id: christine.id },
+  project_2 = { name: "Resturant website", description: "Build resturant website", start_date: "14-11-2023", end_date: "23-12-2023", status: "Completed", user_id: christine.id },
   project_3 = { name: "E-commerce website", description: "Build E-commerce website", start_date: "14-12-2023", end_date: "14-2-2024", status: "Delayed", user_id: tom.id },
   project_4 = { name: "Ruby Project", description: "Build task managment application", start_date: "10-10-2023", end_date: "30-1-2024", status: "In progress", user_id: tom.id },
   project_5 = { name: "REACT Project", description: "Build resturant website", start_date: "12-1-2023", end_date: "21-3-2023", status: "Completed", user_id: christine.id },
@@ -48,9 +46,6 @@ end
 puts "Finished projects seeding!"
 
 tasks = [
-  task = { title: "Check functionality", priority: "High", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
-  task = { title: "Figma design", priority: "High", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
-  task = { title: "Add button", priority: "High", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
   task = { title: "Bootstrap sprint", priority: "High", status: "Completed", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
   task = { title: "Develop game", priority: "High", status: "In progress", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
   task_1 = { title: "Design figma", priority: "Low", status: "Delayed", start:"#{Date.today}", end:"#{Date.today}",user_id:felipe.id},
@@ -63,26 +58,26 @@ tasks = [
   task_8 = { title: "Standup meeting", priority: "Medium", status: "In progress", start:"7-12-2023", end:"7-12-2023",user_id:christine.id},
   task_9 = { title: "Ruby Sprint", priority: "High", status: "In progress", start:"7-12-2023", end:"7-12-2023",user_id:tom.id},
   task_10 = { title: "Create sidebar", priority: "High", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:felipe.id},
-  task_11 = { title: "Finish Javascript logic", priority: "High", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:christine.id},
-  task_12 = { title: "Review Jeff's code", priority: "Medium", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:christine.id},
-  task_13 = { title: "Daily meeting", priority: "Medium", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:christine.id},
+  task_11 = { title: "Finish Javascript logic", priority: "High", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:tom.id},
+  task_12 = { title: "Review Jeff's code", priority: "Medium", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:tom.id},
+  task_13 = { title: "Daily meeting", priority: "Medium", status: "In progress", start:"8-12-2023", end:"8-12-2023",user_id:tom.id},
   task_14 = { title: "Call team manager", priority: "High", status: "In progress", start:"11-12-2023", end:"11-12-2023",user_id:tom.id},
   task_15 = { title: "REACT sprint", priority: "High", status: "In progress", start:"11-12-2023", end:"11-12-2023",user_id:felipe.id},
-  task_16 = { title: "Vue sprint", priority: "Medium", status: "In progress", start:"11-12-2023", end:"11-12-2023",user_id:christine.id},
-  task_17 = { title: "Review application", priority: "Medium", status: "Delayed", start:"11-12-2023", end:"11-12-2023",user_id:christine.id},
+  task_16 = { title: "Vue sprint", priority: "Medium", status: "In progress", start:"11-12-2023", end:"11-12-2023",user_id:tom.id},
+  task_17 = { title: "Review application", priority: "Medium", status: "Delayed", start:"11-12-2023", end:"11-12-2023",user_id:tom.id},
   task_18 = { title: "Create sidebar", priority: "High", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:felipe.id},
-  task_19 = { title: "Finish Javascript logic", priority: "High", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:christine.id},
-  task_20 = { title: "Review Jeff's code", priority: "Medium", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:christine.id},
-  task_21 = { title: "Daily meeting", priority: "Medium", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:christine.id},
+  task_19 = { title: "Finish Javascript logic", priority: "High", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:tom.id},
+  task_20 = { title: "Review Jeff's code", priority: "Medium", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:tom.id},
+  task_21 = { title: "Daily meeting", priority: "Medium", status: "In progress", start:"12-12-2023", end:"12-12-2023",user_id:tom.id},
   task_22 = { title: "Call team manager", priority: "High", status: "In progress", start:"13-12-2023", end:"13-12-2023",user_id:tom.id},
   task_23 = { title: "REACT sprint", priority: "High", status: "In progress", start:"13-12-2023", end:"13-12-2023",user_id:felipe.id},
-  task_24 = { title: "Vue sprint", priority: "Medium", status: "In progress", start:"13-12-2023", end:"13-12-2023",user_id:christine.id},
-  task_25 = { title: "Review application", priority: "Medium", status: "Delayed", start:"13-12-2023", end:"13-12-2023",user_id:christine.id},
+  task_24 = { title: "Vue sprint", priority: "Medium", status: "In progress", start:"13-12-2023", end:"13-12-2023",user_id:tom.id},
+  task_25 = { title: "Review application", priority: "Medium", status: "Delayed", start:"13-12-2023", end:"13-12-2023",user_id:felipe.id},
   task_26 = { title: "Create sidebar", priority: "High", status: "In progress", start:"13-12-2023", end:"13-12-2023",user_id:felipe.id},
   task_27 = { title: "Finish Javascript logic", priority: "High", status: "In progress", start:"13-12-2023", end:"13-12-2023",user_id:christine.id},
   task_28 = { title: "Review Jeff's code", priority: "Medium", status: "In progress", start:"14-12-2023", end:"14-12-2023",user_id:christine.id},
   task_29 = { title: "Daily meeting", priority: "Medium", status: "In progress", start:"14-12-2023", end:"14-12-2023",user_id:christine.id},
-  task_30 = { title: "Call team manager", priority: "High", status: "In progress", start:"14-12-2023", end:"14-12-2023",user_id:tom.id},
+  task_30 = { title: "Call team manager", priority: "High", status: "In progress", start:"14-12-2023", end:"14-12-2023",user_id:felipe.id},
   task_31 = { title: "REACT sprint", priority: "High", status: "In progress", start:"14-12-2023", end:"14-12-2023",user_id:felipe.id},
   task_32 = { title: "Vue sprint", priority: "Medium", status: "In progress", start:"14-12-2023", end:"14-12-2023",user_id:christine.id},
   task_33 = { title: "Review application", priority: "Medium", status: "Delayed", start:"15-12-2023", end:"15-12-2023",user_id:christine.id},
