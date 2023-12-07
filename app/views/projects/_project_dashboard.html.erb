@@ -5,12 +5,12 @@
   <p><strong>Project Leader</strong></p>
 
   <% @projects.each do | project| %>
-    <div data-user-id="<%= project.user_id %>">
+    <%# <div data-user-id="<%= project.user_id %>
       <p class="text-start text-primary"><strong><%= project.name%></strong></p>
       <p><%= project.start_date.strftime('%-d %b %Y') %></p>
       <p><%= project.end_date.strftime('%-d %b %Y') %></p>
       <p><%= project.user.username %></p>
-    </div>
+    <%# </div> %>
   <% end %>
 
 </div>
