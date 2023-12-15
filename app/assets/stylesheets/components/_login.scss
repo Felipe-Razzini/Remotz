@@ -1,0 +1,16 @@
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo {
+  img {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
